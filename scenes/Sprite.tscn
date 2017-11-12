@@ -4,8 +4,6 @@
 [ext_resource path="res://scripts/ClickListenerScript.gd" type="Script" id=2]
 [ext_resource path="res://textures/pixel.png" type="Texture" id=3]
 
-
-
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
@@ -26,7 +24,7 @@ curve = SubResource( 1 )
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 
 transform/pos = Vector2( 18.4522, -7.14944 )
-transform/rot = 90.0
+transform/rot = 90.0001
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0

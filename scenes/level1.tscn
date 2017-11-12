@@ -73,7 +73,7 @@ transform/pos = Vector2( 349.741, 1194.65 )
 
 [node name="PathFollow2D" parent="Bus"]
 
-transform/rot = 90.0
+transform/rot = 90.0001
 speed = 350
 
 [node name="obstakel" type="Path2D" parent="."]
