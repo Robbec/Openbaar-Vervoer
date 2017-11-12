@@ -1,28 +1,30 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
-[ext_resource path="res://scripts/RetryButtonScript.gd" type="Script" id=2]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
+[ext_resource path="res://scripts/RetryButtonScript.gd" type="Script" id=4]
 
 [node name="Sprite" type="Sprite"]
 
 texture = ExtResource( 1 )
 centered = false
-modulate = Color( 0, 0, 0, 1 )
 region = true
 region_rect = Rect2( 0, 0, 720, 1280 )
 
 [node name="Label" type="Label" parent="."]
 
-rect/scale = Vector2( 7, 7 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 94.0
-margin/top = 61.0
-margin/right = 167.0
-margin/bottom = 75.0
-text = "Joepie"
+margin/left = 0.0
+margin/top = 66.0
+margin/right = 720.0
+margin/bottom = 197.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.341176, 0.368627, 0.380392, 1 )
+text = "Aangekomen"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -30,56 +32,20 @@ max_lines_visible = -1
 
 [node name="Retry" type="Button" parent="."]
 
-rect/scale = Vector2( 8, 8 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 139.0
-margin/top = 539.0
-margin/right = 184.0
-margin/bottom = 559.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "retry"
-flat = false
-script/script = ExtResource( 2 )
-
-[node name="Next" type="Button" parent="."]
-
-rect/scale = Vector2( 8, 8 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 139.0
-margin/top = 728.0
-margin/right = 184.0
-margin/bottom = 748.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Next"
-flat = false
-script/script = ExtResource( 2 )
-
-[node name="NextLevel" type="Button" parent="."]
-
-visibility/visible = false
-rect/scale = Vector2( 8, 8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 176.0
 margin/top = 653.0
-margin/right = 221.0
-margin/bottom = 673.0
+margin/right = 528.0
+margin/bottom = 790.0
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Retry"
 flat = false
+script/script = ExtResource( 4 )
 
 

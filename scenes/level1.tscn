@@ -63,7 +63,6 @@ drag_margin/bottom = 0.2
 
 texture = ExtResource( 2 )
 centered = false
-modulate = Color( 0.452515, 1, 0.390625, 1 )
 region = true
 region_rect = Rect2( 0, 0, 720, 1280 )
 
@@ -73,8 +72,11 @@ transform/pos = Vector2( 349.741, 1194.65 )
 
 [node name="PathFollow2D" parent="Bus"]
 
-transform/rot = 90.0001
 speed = 350
+
+[node name="Sprite" parent="Bus/PathFollow2D/Area2D"]
+
+modulate = Color( 0.996078, 0.866667, 0.282353, 1 )
 
 [node name="obstakel" type="Path2D" parent="."]
 
@@ -113,7 +115,7 @@ _update_shape_index = 0
 [node name="Sprite" type="Sprite" parent="obstakel/PathFollow2D/Area2D"]
 
 texture = ExtResource( 2 )
-modulate = Color( 0.00631714, 0, 0.808594, 1 )
+modulate = Color( 0.0862745, 0, 0.576471, 1 )
 region = true
 region_rect = Rect2( 0, 0, 30, 30 )
 
