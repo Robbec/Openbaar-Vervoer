@@ -15,7 +15,7 @@ func _busArrived():
 	bussesArrived = bussesArrived + 1
 	print("bus has arrived")
 	if(bussesArrived == totalBusses):
-		get_tree().change_scene("res://scenes/gameOver.tscn")
+		get_tree().change_scene("res://scenes/win.tscn")
 
 func _ready():
 	# Called every time the node is added to the scene.

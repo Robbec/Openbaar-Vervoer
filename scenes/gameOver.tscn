@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scripts/RetryButtonScript.gd" type="Script" id=4]
+[ext_resource path="res://scenes/menuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=4]
+[ext_resource path="res://scripts/RetryButtonScript.gd" type="Script" id=5]
 
 [node name="Sprite" type="Sprite"]
 
@@ -12,17 +13,19 @@ centered = false
 region = true
 region_rect = Rect2( 0, 0, 720, 1280 )
 
-[node name="Label" type="Label" parent="."]
+[node name="MenuButton" parent="." instance=ExtResource( 2 )]
+
+[node name="LoseText" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 66.0
+margin/top = 133.0
 margin/right = 720.0
-margin/bottom = 197.0
-custom_fonts/font = ExtResource( 2 )
+margin/bottom = 264.0
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.341176, 0.368627, 0.380392, 1 )
 text = "Vertraging"
 align = 1
@@ -30,7 +33,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Retry" type="Button" parent="."]
+[node name="RetryButton" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -40,12 +43,12 @@ margin/left = 176.0
 margin/top = 653.0
 margin/right = 528.0
 margin/bottom = 790.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Retry"
 flat = false
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 
 
