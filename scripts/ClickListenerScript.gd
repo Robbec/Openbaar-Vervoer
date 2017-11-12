@@ -11,10 +11,11 @@ func _ready():
 	pass
 	
 func _input_event(viewport, event, shape_idx):
-    if event.type == InputEvent.MOUSE_BUTTON \
-    and event.button_index == BUTTON_LEFT \
-    and event.pressed:
-        get_parent().set_moving(true)
+	if event.type == InputEvent.MOUSE_BUTTON \
+	and event.button_index == BUTTON_LEFT \
+	and event.pressed:
+		get_parent().set_moving(true)
+		get_parent().get_parent().get_parent().bus_clicked()
 
 func _on_area_enter(area):
 	get_tree().change_scene("res://scenes/gameOver.tscn")

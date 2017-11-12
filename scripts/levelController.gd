@@ -1,11 +1,8 @@
-extends Sprite
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var bussesArrived = 0
 export var totalBusses = 1
 var measuring = false
+var timer = 0
 
 func bus_clicked():
 	if(!measuring):
@@ -16,8 +13,16 @@ func _busArrived():
 	print("bus has arrived")
 	if(bussesArrived == totalBusses):
 		get_tree().change_scene("res://scenes/win.tscn")
+		measuring = false
+		print(timer)
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	set_process(true)
 	pass
+	
+func _process(delta):
+	if(measuring):
+		timer += delta
+		get_node("TimerLabel").set_text(String(timer))
