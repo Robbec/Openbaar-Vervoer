@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 # class member variables go here, for example:
 # var a = 2
@@ -8,6 +8,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
-	
+
 func _pressed():
-	get_tree().change_scene("res://scenes/level1.tscn")
+	get_tree().change_scene("res://scenes/menu.tscn")
