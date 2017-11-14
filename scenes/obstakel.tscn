@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
 
@@ -8,6 +8,11 @@ bake_interval = 5.0
 _data = {
 "points": Vector2Array(  )
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="obstakel" type="Node2D"]
 
@@ -25,13 +30,6 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
-
-texture = ExtResource( 1 )
-modulate = Color( 0.121765, 0, 0.820312, 1 )
-region = true
-region_rect = Rect2( 0, 0, 40, 40 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D"]
 
 playback/process_mode = 1
@@ -41,5 +39,31 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.93195, 0, 0, 1.89444, 0.254036, -0.873432 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+
+transform/pos = Vector2( 0.254036, -0.873432 )
+transform/scale = Vector2( 1.93195, 1.89444 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Area2D"]
+
+texture = ExtResource( 1 )
+modulate = Color( 0.121765, 0, 0.820312, 1 )
+region = true
+region_rect = Rect2( 0, 0, 40, 40 )
 
 

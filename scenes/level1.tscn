@@ -87,7 +87,6 @@ modulate = Color( 0.996078, 0.866667, 0.282353, 1 )
 
 [node name="obstakel" type="Path2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 586.197, 406.703 )
 curve = SubResource( 1 )
 
