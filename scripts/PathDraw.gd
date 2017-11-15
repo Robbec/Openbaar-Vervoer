@@ -1,4 +1,4 @@
-extends Node2D
+extends Path2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -7,12 +7,11 @@ extends Node2D
 var points
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	points = get_parent().get_curve().tesselate(5,3)
-	for v in points:
-		print(v)
 	pass
 	
 func _draw():
+	get_curve().set_bake_interval(50)
+	points = get_curve().get_baked_points()
+	for v in points:
+		draw_circle(v,4,Color(.5,.5,.5))
 	pass
