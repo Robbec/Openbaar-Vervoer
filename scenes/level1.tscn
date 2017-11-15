@@ -41,6 +41,7 @@ centered = false
 modulate = Color( 0, 1, 0.15625, 1 )
 script/script = ExtResource( 1 )
 totalBusses = 1
+level = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
