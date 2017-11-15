@@ -14,6 +14,7 @@ func _busArrived():
 	print("bus has arrived")
 	if(bussesArrived == totalBusses):
 		get_tree().change_scene("res://scenes/win.tscn")
+		global.Level[level+1] = true
 		measuring = false
 		print(timer)
 
@@ -22,6 +23,7 @@ func _ready():
 	# Initialization here
 	global.currentScene = level
 	set_process(true)
+	
 	pass
 	
 func _process(delta):
