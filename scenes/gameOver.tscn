@@ -35,3 +35,4 @@ max_lines_visible = -1
 [node name="Node" parent="." instance=ExtResource( 4 )]
 
 
+[editable path="MenuButton"]

@@ -1,6 +1,7 @@
 
 var bussesArrived = 0
 export var totalBusses = 1
+export var level = 1
 var measuring = false
 var timer = 0
 
@@ -19,6 +20,7 @@ func _busArrived():
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	global.currentScene = level
 	set_process(true)
 	pass
 	

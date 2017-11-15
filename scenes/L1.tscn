@@ -5,6 +5,8 @@
 
 [node name="root" instance=ExtResource( 1 )]
 
+level = 1
+
 [node name="root" parent="."]
 
 editor/display_folded = true
