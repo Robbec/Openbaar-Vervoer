@@ -1,4 +1,9 @@
 extends Node
 
 var currentScene
-var Level = [true,false,false,false,false,false,false,false,false]
+var Level = Array()
+
+func _ready():
+	Level.append(true)
+	for i in range(1,8):
+		Level.append(false)
