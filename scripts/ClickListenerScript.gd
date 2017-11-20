@@ -18,4 +18,4 @@ func _input_event(viewport, event, shape_idx):
 		get_parent().get_parent().get_parent().bus_clicked()
 
 func _on_area_enter(area):
-	get_tree().change_scene("res://scenes/gameOver.tscn")
+	get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
