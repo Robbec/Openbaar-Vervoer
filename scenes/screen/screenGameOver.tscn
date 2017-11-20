@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
-[ext_resource path="res://scenes/menuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scenes/retryButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/screen/screenButtons/buttonRetry.tscn" type="PackedScene" id=4]
 
 [node name="Sprite" type="Sprite"]
 
