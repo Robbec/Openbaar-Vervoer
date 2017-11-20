@@ -9,8 +9,6 @@
 
 [node name="root" instance=ExtResource( 1 )]
 
-level = 1
-
 [node name="menuButton" type="TextureButton" parent="root"]
 
 focus/ignore_mouse = false
