@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://scenes/template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/obstakel.tscn" type="PackedScene" id=3]
 
@@ -45,8 +45,8 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="obstakel/Path2D"]
 
-transform/pos = Vector2( -492.366, 9.71282 )
-transform/rot = -179.105
+transform/pos = Vector2( -492.366, 9.71283 )
+transform/rot = -179.284
 offset = 492.215
 
 [node name="AnimationPlayer" parent="obstakel/Path2D/PathFollow2D"]

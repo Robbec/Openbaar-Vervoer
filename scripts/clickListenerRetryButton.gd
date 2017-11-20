@@ -8,4 +8,4 @@ func _ready():
 	pass
 	
 func _pressed():
-	get_tree().change_scene("res://scenes/L"+str(global.currentScene)+".tscn")
+	get_tree().change_scene("res://scenes/level/level"+str(global.currentScene)+".tscn")

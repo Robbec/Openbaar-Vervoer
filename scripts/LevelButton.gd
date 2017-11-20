@@ -11,5 +11,5 @@ func _ready():
 	# Initialization here
 	pass
 func _pressed():
-	get_tree().change_scene("res://scenes/L" + str(level) + ".tscn");
+	get_tree().change_scene("res://scenes/level/level" + str(level) + ".tscn");
 	
