@@ -11,14 +11,28 @@ script/script = ExtResource( 1 )
 totalBusses = 1
 level = 1
 
-[node name="background" type="Sprite" parent="."]
+[node name="background" type="CanvasLayer" parent="."]
+
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="background" type="Sprite" parent="background"]
 
 texture = ExtResource( 2 )
 centered = false
 region = true
 region_rect = Rect2( 0, 0, 720, 1280 )
 
-[node name="TimerLabel" type="Label" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="TimerLabel" type="Label" parent="UILayer"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -34,6 +48,8 @@ text = "0.00"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="root" parent="UILayer" instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -53,7 +69,5 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-
-[node name="root" parent="." instance=ExtResource( 4 )]
 
 

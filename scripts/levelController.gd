@@ -29,4 +29,4 @@ func _ready():
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("TimerLabel").set_text(String(timer))
+		get_node("UILayer").get_node("TimerLabel").set_text(String(timer))
