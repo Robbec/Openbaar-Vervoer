@@ -70,10 +70,9 @@ max_lines_visible = -1
 
 [node name="pijl" type="Sprite" parent="tutorial"]
 
-transform/pos = Vector2( 499.176, 1049.67 )
+transform/pos = Vector2( 497.325, 1049.67 )
 transform/rot = -125.166
 transform/scale = Vector2( 0.283488, 0.283488 )
 texture = ExtResource( 6 )
 
 
-[editable path="root"]
