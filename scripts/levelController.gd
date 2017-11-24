@@ -1,22 +1,21 @@
 var bussesArrived = 0
-export var totalBusses = 1
+var totalBusses = 0
 export var level = 1
 var measuring = false
 var timer = 0
-var screensize
+#var screensize
 
 #onready var bus = preload("res://scenes/Bus.tscn")
 
 func _ready():
-	screensize = get_viewport().get_rect().size
+	#screensize = get_viewport().get_rect().size
 	global.currentScene = level
 	#create_busses(totalBusses)
-	print(get_node("busContainer"))
 	for bus in get_node("busContainer").get_children():
 		print("A bus in the container.")
-		print(bus.get_node("padBus").get_node("bus"))
-		bus.get_node("padBus").get_node("bus").connect("busClicked",self,"_on_bus_clicked")
-		bus.get_node("padBus").get_node("bus").connect("busArrived",self,"_on_bus_arrived")
+		totalBusses += 1
+		bus.get_node("padBus/bus").connect("busClicked",self,"_on_bus_clicked")
+		bus.get_node("padBus/bus").connect("busArrived",self,"_on_bus_arrived")
 	set_process(true)
 	
 #func create_busses(num):
@@ -30,8 +29,10 @@ func _on_bus_clicked():
 	measuring = true
 
 func _on_bus_arrived():
-	bussesArrived = bussesArrived + 1
+	print("Start arrived")
+	bussesArrived += 1
 	if(bussesArrived == totalBusses):
+		print("All busses have arrived.")
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 		global.Level[level+1] = true
 		measuring = false

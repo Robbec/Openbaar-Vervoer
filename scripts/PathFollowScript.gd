@@ -17,5 +17,5 @@ func _process(delta):
 		set_offset(get_offset() + speed * delta)
 	if get_unit_offset() > .999 and moving:
 		moving = false
-		print("Bus has arrived.")
 		emit_signal("busArrived")
+		print("Bus has arrived.")
