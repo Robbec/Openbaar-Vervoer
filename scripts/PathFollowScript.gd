@@ -20,3 +20,4 @@ func _process(delta):
 		emit_signal("busArrived")
 		print("Bus has arrived.")		
 		moving = false
+		queue_free()

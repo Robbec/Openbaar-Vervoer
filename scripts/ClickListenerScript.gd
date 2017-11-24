@@ -14,4 +14,5 @@ func _input_event(viewport, event, shape_idx):
 		print("Bus is clicked.")
 
 func _on_area_enter(area):
+	get_tree().get_root().get_node("main/busContainer/Path2D/SamplePlayer").play("carCrash")
 	get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
