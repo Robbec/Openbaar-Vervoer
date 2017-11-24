@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Bus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
+
+
 
 [sub_resource type="Curve2D" id=1]
 

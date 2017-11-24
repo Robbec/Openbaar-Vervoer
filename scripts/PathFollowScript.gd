@@ -2,6 +2,7 @@ extends PathFollow2D
 
 export var speed = 400
 var moving = false
+
 signal busArrived
 
 func _ready():
@@ -15,7 +16,7 @@ func _on_bus_clicked():
 func _process(delta):
 	if moving:
 		set_offset(get_offset() + speed * delta)
-	if get_unit_offset() > .999 and moving:
-		moving = false
+	if get_unit_offset() > 0.99 and moving:
 		emit_signal("busArrived")
-		print("Bus has arrived.")
+		print("Bus has arrived.")		
+		moving = false

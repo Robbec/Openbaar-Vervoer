@@ -15,7 +15,7 @@ func _ready():
 		print("A bus in the container.")
 		totalBusses += 1
 		bus.get_node("padBus/bus").connect("busClicked",self,"_on_bus_clicked")
-		bus.get_node("padBus/bus").connect("busArrived",self,"_on_bus_arrived")
+		bus.get_node("padBus").connect("busArrived",self,"_on_bus_arrived")
 	set_process(true)
 	
 #func create_busses(num):
