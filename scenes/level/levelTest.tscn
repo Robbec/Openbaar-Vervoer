@@ -7,6 +7,4 @@
 
 [node name="Path2D" parent="busContainer" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 499.68, 1172.76 )
-
 

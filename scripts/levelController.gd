@@ -11,6 +11,7 @@ func _ready():
 	screensize = get_viewport().get_rect().size
 	global.currentScene = level
 	#create_busses(totalBusses)
+	print(get_node("busContainer"))
 	for bus in get_node("busContainer").get_children():
 		print("A bus in the container.")
 		print(bus.get_node("padBus").get_node("bus"))
@@ -25,11 +26,11 @@ func _ready():
 #		b.set_pos(Vector2(screensize.width / (num+1) * (i+1), screensize.height - 140))
 
 func _on_bus_clicked():
+	print("Start measuring time.")
 	measuring = true
 
 func _on_bus_arrived():
 	bussesArrived = bussesArrived + 1
-	print("Bus has arrived")
 	if(bussesArrived == totalBusses):
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 		global.Level[level+1] = true
@@ -39,4 +40,4 @@ func _on_bus_arrived():
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("TimerLabel").set_text(str("%.2f" % timer))
+		get_node("screen/timerLabel").set_text(str("%.2f" % timer))
