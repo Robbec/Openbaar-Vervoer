@@ -56,6 +56,6 @@ transform/rot = -125.166
 transform/scale = Vector2( 0.283488, 0.283488 )
 texture = ExtResource( 3 )
 
-[node name="Path2D" parent="busContainer" instance=ExtResource( 4 )]
+[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
 

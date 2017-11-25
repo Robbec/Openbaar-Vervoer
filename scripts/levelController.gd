@@ -19,8 +19,8 @@ func _ready():
 	for bus in get_node("busContainer").get_children():
 		print("A bus in the container.")
 		totalBusses += 1
-		bus.get_node("padBus/bus").connect("busClicked",self,"_on_bus_clicked")
-		bus.get_node("padBus").connect("busArrived",self,"_on_bus_arrived")
+		bus.get_node("busPathFollow/bus").connect("busClicked",self,"_on_bus_clicked")
+		bus.get_node("busPathFollow").connect("busArrived",self,"_on_bus_arrived")
 	set_process(true)
 	print(global.unlockedLevels)
 	

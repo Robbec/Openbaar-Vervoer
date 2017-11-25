@@ -7,7 +7,6 @@
 [node name="main" type="Node"]
 
 script/script = ExtResource( 1 )
-level = 1
 
 [node name="screen" type="Control" parent="."]
 
@@ -50,5 +49,7 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="busContainer" type="Node" parent="."]
+
+[node name="obstacleContainer" type="Node" parent="."]
 
 

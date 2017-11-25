@@ -6,10 +6,8 @@
 
 [node name="main" instance=ExtResource( 1 )]
 
-level = 2
+[node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
-[node name="Path2D" parent="busContainer" instance=ExtResource( 2 )]
-
-[node name="obstacleContainer" parent="." instance=ExtResource( 3 )]
+[node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]
 
 
