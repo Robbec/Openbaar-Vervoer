@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/level/obstacle/obstacleHorizontal.tres" type="Animation" id=1]
-[ext_resource path="res://textures/pixel.png" type="Texture" id=2]
+[ext_resource path="res://scripts/animationPlayer.gd" type="Script" id=2]
+[ext_resource path="res://textures/pixel.png" type="Texture" id=3]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -53,6 +54,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+script/script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/obstaclePath/AnimationPlayer/obstacle"]
 
@@ -64,7 +66,7 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="Path2D/obstaclePath/AnimationPlayer/obstacle"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 modulate = Color( 0.121765, 0, 0.820312, 1 )
 region = true
 region_rect = Rect2( 0, 0, 40, 40 )

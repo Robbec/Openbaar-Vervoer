@@ -58,4 +58,9 @@ texture = ExtResource( 3 )
 
 [node name="Path2D" parent="busContainer" instance=ExtResource( 4 )]
 
+[node name="padBus" parent="busContainer/Path2D"]
 
+transform/rot = 90.0
+
+
+[editable path="busContainer/Path2D"]

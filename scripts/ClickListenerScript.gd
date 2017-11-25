@@ -1,6 +1,8 @@
 extends Area2D
 
 signal busClicked
+signal busCrashed
+var timer
 
 func _ready():
 	connect("area_enter",self,"_on_area_enter")
@@ -15,4 +17,13 @@ func _input_event(viewport, event, shape_idx):
 
 func _on_area_enter(area):
 	get_tree().get_root().get_node("main/busContainer/Path2D/SamplePlayer").play("carCrash")
+	emit_signal("busCrashed")
+	if area.has_method("stop_playing"): area.stop_playing()
+	timer = Timer.new()
+	timer.connect("timeout",self,"on_timer_timeout")
+	add_child(timer)
+	timer.set_wait_time( 2 )
+	timer.start()
+	
+func on_timer_timeout():
 	get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
