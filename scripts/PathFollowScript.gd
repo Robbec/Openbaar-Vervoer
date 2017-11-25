@@ -13,6 +13,9 @@ func _on_bus_clicked():
 	print("Bus starts moving.")
 	moving = true
 	
+func stop_moving():
+	moving = false
+	
 func _process(delta):
 	if moving:
 		set_offset(get_offset() + speed * delta)
