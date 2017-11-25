@@ -1,9 +1,9 @@
 extends Node
 
 var currentScene
-var Level = Array()
+var unlockedLevels = Array()
 
 func _ready():
-	Level.append(true)
-	for i in range(1,8):
-		Level.append(false)
+	unlockedLevels.append(true)
+	for i in range(8):
+		unlockedLevels.append(false)
