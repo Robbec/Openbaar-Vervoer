@@ -3,18 +3,16 @@
 [ext_resource path="res://textures/menuButton.png" type="Texture" id=1]
 [ext_resource path="res://scripts/clickListenerMenuButton.gd" type="Script" id=2]
 
-[node name="root" type="Node"]
-
-[node name="menuButton" type="TextureButton" parent="."]
+[node name="menuButton" type="TextureButton"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 19.0
-margin/top = 14.0
-margin/right = 19.0
-margin/bottom = 14.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

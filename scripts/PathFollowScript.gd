@@ -1,25 +1,23 @@
 extends PathFollow2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
-export var speed = 200
+export var speed = 400
 var moving = false
 
+signal busArrived
+
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	get_node("bus").connect("busClicked",self,"_on_bus_clicked")
 	set_process(true)
-	pass
 	
-func set_moving(mov):
-	moving = mov
+func _on_bus_clicked():
+	print("Bus starts moving.")
+	moving = true
 	
 func _process(delta):
 	if moving:
-		var currOffset = get_offset()
-		set_offset(currOffset + speed * delta)
-	if get_unit_offset() > .999 and moving:
+		set_offset(get_offset() + speed * delta)
+	if get_unit_offset() > 0.99 and moving:
+		emit_signal("busArrived")
+		print("Bus has arrived.")		
 		moving = false
-		get_parent().get_parent()._busArrived()
+		queue_free()
