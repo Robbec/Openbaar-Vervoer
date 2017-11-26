@@ -7,6 +7,7 @@ var measuring = false
 var timer = 0
 #var screensize
 
+
 #onready var bus = preload("res://scenes/Bus.tscn")
 
 func _ready():
@@ -23,6 +24,8 @@ func _ready():
 		bus.get_node("busPathFollow").connect("busArrived",self,"_on_bus_arrived")
 	set_process(true)
 	print(global.unlockedLevels)
+	
+
 	
 #func create_busses(num):
 #	for i in range(num):
