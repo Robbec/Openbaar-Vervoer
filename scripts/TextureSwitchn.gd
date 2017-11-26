@@ -1,18 +1,23 @@
 extends TextureButton
 var soundOff = preload("res://textures/soundOff.png")
 var soundOn = preload("res://textures/soundOn.png")
-var sound = true
+var mute
 
 func _ready():
+	mute = !sound.music
+	if(mute):
+		set_normal_texture(soundOff)
+	else:
+		set_normal_texture(soundOn)
 	pass
 	
 func _pressed():
-	if(sound):
-		AudioServer.set_fx_global_volume_scale(10)
-		set_normal_texture(soundOff)
-		sound = false
-	else:
-		AudioServer.set_fx_global_volume_scale(0)
+	if(mute):
+		sound._unmute()
 		set_normal_texture(soundOn)
-		sound = true
+		mute = false
+	else:
+		sound._mute()
+		set_normal_texture(soundOff)
+		mute = true
 	

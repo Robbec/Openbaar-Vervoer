@@ -46,6 +46,7 @@ func _on_bus_arrived():
 		global.unlockedLevels[level] = true
 		measuring = false
 		print(timer)
+		global._set_score(timer,level)
 	
 func _process(delta):
 	if(measuring):
