@@ -16,7 +16,7 @@ func _input_event(viewport, event, shape_idx):
 		print("Bus is clicked.")
 
 func _on_area_enter(area):
-	get_tree().get_root().get_node("main/busContainer/Path2D/SamplePlayer").play("carCrash")
+	get_tree().get_root().get_node("main/busContainer/busPath/SamplePlayer").play("carCrash")
 	emit_signal("busCrashed")
 	if area.has_method("stop_playing"): area.stop_playing()
 	timer = Timer.new()

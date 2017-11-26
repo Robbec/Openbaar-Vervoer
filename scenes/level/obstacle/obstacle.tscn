@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://scenes/level/obstacle/obstacleHorizontal.tres" type="Animation" id=1]
-[ext_resource path="res://scripts/animationPlayer.gd" type="Script" id=2]
-[ext_resource path="res://textures/pixel.png" type="Texture" id=3]
+[ext_resource path="res://scripts/animationPlayer.gd" type="Script" id=1]
+[ext_resource path="res://textures/pixel.png" type="Texture" id=2]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -11,18 +10,33 @@ _data = {
 "points": Vector2Array(  )
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="Animation" id=2]
+
+resource/name = "horizontalCenterLeft"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/obstacle:transform/pos")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 550 ), Vector2( 600, 550 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="obstacleContainer" type="Node2D"]
-
-[node name="Path2D" type="Path2D" parent="."]
+[node name="obstaclePath" type="Path2D"]
 
 curve = SubResource( 1 )
 
-[node name="obstaclePath" type="PathFollow2D" parent="Path2D"]
+[node name="obstaclePathFollow" type="PathFollow2D" parent="."]
 
 offset = 0.0
 h_offset = 0.0
@@ -32,41 +46,41 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/obstaclePath"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="obstaclePathFollow"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/horizontalMove = ExtResource( 1 )
+anims/horizontalCenter = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = "horizontalMove"
+autoplay = "horizontalCenter"
 
-[node name="obstacle" type="Area2D" parent="Path2D/obstaclePath/AnimationPlayer"]
+[node name="obstacle" type="Area2D" parent="obstaclePathFollow/AnimationPlayer"]
 
 transform/pos = Vector2( 597.874, 550 )
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1.93195, 0, 0, 1.89444, 0.254036, -0.873432 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 2 )
+script/script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/obstaclePath/AnimationPlayer/obstacle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclePathFollow/AnimationPlayer/obstacle"]
 
 transform/pos = Vector2( 0.254036, -0.873432 )
 transform/scale = Vector2( 1.93195, 1.89444 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="Path2D/obstaclePath/AnimationPlayer/obstacle"]
+[node name="Sprite" type="Sprite" parent="obstaclePathFollow/AnimationPlayer/obstacle"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 modulate = Color( 0.121765, 0, 0.820312, 1 )
 region = true
 region_rect = Rect2( 0, 0, 40, 40 )

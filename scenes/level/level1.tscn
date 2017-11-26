@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://scenes/level/levelTemplateNew.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://textures/pijl.png" type="Texture" id=3]
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
@@ -56,11 +56,6 @@ transform/rot = -125.166
 transform/scale = Vector2( 0.283488, 0.283488 )
 texture = ExtResource( 3 )
 
-[node name="Path2D" parent="busContainer" instance=ExtResource( 4 )]
-
-[node name="padBus" parent="busContainer/Path2D"]
-
-transform/rot = 90.0
+[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
 
-[editable path="busContainer/Path2D"]

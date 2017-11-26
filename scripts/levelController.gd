@@ -1,6 +1,8 @@
 var bussesArrived = 0
 var totalBusses = 0
-export var level = 1
+onready var filename = get_tree().get_current_scene().get_filename()
+var regexp = RegEx.new()
+var level = 0
 var measuring = false
 var timer = 0
 #var screensize
@@ -9,14 +11,18 @@ var timer = 0
 
 func _ready():
 	#screensize = get_viewport().get_rect().size
+	regexp.compile("\\level(.).tscn")
+	regexp.find(filename)
+	level = int(regexp.get_captures()[1])
 	global.currentScene = level
 	#create_busses(totalBusses)
 	for bus in get_node("busContainer").get_children():
 		print("A bus in the container.")
 		totalBusses += 1
-		bus.get_node("padBus/bus").connect("busClicked",self,"_on_bus_clicked")
-		bus.get_node("padBus").connect("busArrived",self,"_on_bus_arrived")
+		bus.get_node("busPathFollow/bus").connect("busClicked",self,"_on_bus_clicked")
+		bus.get_node("busPathFollow").connect("busArrived",self,"_on_bus_arrived")
 	set_process(true)
+	print(global.unlockedLevels)
 	
 #func create_busses(num):
 #	for i in range(num):
@@ -34,7 +40,7 @@ func _on_bus_arrived():
 	if(bussesArrived == totalBusses):
 		print("All busses have arrived.")
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
-		global.Level[level+1] = true
+		global.unlockedLevels[level] = true
 		measuring = false
 		print(timer)
 	
