@@ -6,8 +6,6 @@ func _ready():
 	connect("area_enter",self,"_on_area_enter")
 	
 func _input_event(viewport, event, shape_idx):
-	var capture = get_viewport().get_screen_capture()
-	capture.save_png("res://textures/screenshot.png")
 	print("Input event registered.")
 	if event.type == InputEvent.MOUSE_BUTTON \
 	and event.button_index == BUTTON_LEFT \
