@@ -9,6 +9,7 @@
 
 [node name="screen" parent="."]
 
+editor/display_folded = true
 margin/bottom = 1100.0
 
 [node name="tutorial" type="Node" parent="screen"]
