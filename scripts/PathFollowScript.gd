@@ -7,6 +7,7 @@ signal busArrived
 
 func _ready():
 	get_node("bus").connect("busClicked",self,"_on_bus_clicked")
+	get_node("bus").connect("busCrashed",self,"stop_moving")
 	set_process(true)
 	
 func _on_bus_clicked():
