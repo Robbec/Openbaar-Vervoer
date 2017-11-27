@@ -29,4 +29,5 @@ func _on_area_enter(area):
 	timer.start()
 	
 func on_timer_timeout():
+	sound._play_sound("carCrash")
 	get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")

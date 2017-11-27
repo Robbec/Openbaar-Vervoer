@@ -59,4 +59,15 @@ texture = ExtResource( 3 )
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
+[node name="Background" type="CanvasLayer" parent="."]
 
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+
+transform/pos = Vector2( 362.328, 640.081 )
+transform/scale = Vector2( 1.77289, 1.81428 )
+texture = ExtResource( 5 )

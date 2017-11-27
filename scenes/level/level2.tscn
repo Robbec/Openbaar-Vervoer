@@ -10,4 +10,15 @@
 
 [node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]
 
+[node name="Background" type="CanvasLayer" parent="."]
 
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+
+transform/pos = Vector2( 364.162, 643.081 )
+transform/scale = Vector2( 1.79212, 1.79599 )
+texture = ExtResource( 4 )
