@@ -34,6 +34,7 @@ func _ready():
 #		b.set_pos(Vector2(screensize.width / (num+1) * (i+1), screensize.height - 140))
 
 func _on_bus_clicked():
+	emit_signal("busClicked")
 	print("Start measuring time.")
 	measuring = true
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://textures/pijl.png" type="Texture" id=3]
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/level1_achtergrond.PNG" type="Texture" id=5]
+[ext_resource path="res://textures/overlay.png" type="Texture" id=6]
+[ext_resource path="res://scripts/overlay_dissapear.gd" type="Script" id=7]
 
 [node name="main" instance=ExtResource( 1 )]
 
@@ -71,5 +73,20 @@ scale = Vector2( 1, 1 )
 transform/pos = Vector2( 362.328, 640.081 )
 transform/scale = Vector2( 1.77289, 1.81428 )
 texture = ExtResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( 362.07, 641.148 )
+transform/scale = Vector2( 1.80912, 1.82512 )
+texture = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 
