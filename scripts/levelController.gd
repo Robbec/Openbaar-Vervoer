@@ -20,7 +20,7 @@ func _ready():
 	print(global.unlockedLevels)
 	
 func _on_bus_clicked():
-	emit_signal("busClicked")
+	
 	print("Start measuring time.")
 	measuring = true
 

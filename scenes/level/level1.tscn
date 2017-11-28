@@ -61,6 +61,13 @@ texture = ExtResource( 3 )
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
+editor/display_folded = true
+transform/pos = Vector2( 360, 1180 )
+
+[node name="busPathFollow" parent="busContainer/busPath"]
+
+transform/rot = 90.0001
+
 [node name="Background" type="CanvasLayer" parent="."]
 
 layer = -1
@@ -83,10 +90,29 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 
-visibility/opacity = 0.5
-transform/pos = Vector2( 362.07, 641.148 )
+visibility/opacity = 0.95
+transform/pos = Vector2( 360.219, 641.148 )
 transform/scale = Vector2( 1.80912, 1.82512 )
 texture = ExtResource( 6 )
 script/script = ExtResource( 7 )
 
+[node name="Label" type="Label" parent="CanvasLayer/Sprite"]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -145.0
+margin/top = 112.0
+margin/right = 149.0
+margin/bottom = 177.0
+text = "Het doel van het spel is om de bus 
+aan de andere kant van het scherm te krijgen.
+ Je kan de bus laten bewegen door er eenmaal
+ op te drukken."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
+[editable path="busContainer/busPath"]
