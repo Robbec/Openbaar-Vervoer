@@ -5,17 +5,12 @@ var regexp = RegEx.new()
 var level = 0
 var measuring = false
 var timer = 0
-#var screensize
-
-#onready var bus = preload("res://scenes/Bus.tscn")
 
 func _ready():
-	#screensize = get_viewport().get_rect().size
 	regexp.compile("\\level(.).tscn")
 	regexp.find(filename)
 	level = int(regexp.get_captures()[1])
 	global.currentScene = level
-	#create_busses(totalBusses)
 	for bus in get_node("busContainer").get_children():
 		print("A bus in the container.")
 		totalBusses += 1
@@ -24,12 +19,6 @@ func _ready():
 	set_process(true)
 	print(global.unlockedLevels)
 	
-#func create_busses(num):
-#	for i in range(num):
-#		var b = bus.instance()
-#		busContainer.add_child(b)
-#		b.set_pos(Vector2(screensize.width / (num+1) * (i+1), screensize.height - 140))
-
 func _on_bus_clicked():
 	
 	print("Start measuring time.")
@@ -44,6 +33,7 @@ func _on_bus_arrived():
 		global.unlockedLevels[level] = true
 		measuring = false
 		print(timer)
+		global._set_score(timer,level)
 	
 func _process(delta):
 	if(measuring):
