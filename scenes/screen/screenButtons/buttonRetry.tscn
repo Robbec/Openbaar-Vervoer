@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://textures/retry2.png" type="Texture" id=1]
+[ext_resource path="res://textures/retryButton.png" type="Texture" id=1]
 [ext_resource path="res://scripts/clickListenerRetryButton.gd" type="Script" id=2]
 
 [node name="Node" type="Node"]
@@ -14,16 +14,14 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 80.0
 margin/top = 1000.0
-margin/right = 470.0
-margin/bottom = 1482.3
+margin/right = 655.0
+margin/bottom = 1541.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 1 )
 params/resize_mode = 0
-params/scale = Vector2( 0.35, 0.35 )
 params/stretch_mode = 0
-params/modulate = Color( 0.996078, 0.866667, 0.282353, 1 )
 script/script = ExtResource( 2 )
 
 
