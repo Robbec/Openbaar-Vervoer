@@ -1,6 +1,6 @@
 extends TextureButton
-var soundOff = preload("res://textures/soundOff.png")
-var soundOn = preload("res://textures/soundOn.png")
+var soundOff = preload("res://textures/audioOff.png")
+var soundOn = preload("res://textures/audioOn.png")
 var sound = true
 
 func _ready():
