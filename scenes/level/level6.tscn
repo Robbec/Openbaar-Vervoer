@@ -38,7 +38,7 @@ _data = {
 "points": Vector2Array( 0, 0, 0, 0, 8.6626, 6.57043, 0, 0, 0, 0, 8.6626, -411.252, 0, 0, 0, 0, 409.361, -411.252, 0, 0, 0, 0, 409.361, -1140.73 )
 }
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="Curve2D" id=5]
 
 bake_interval = 5.0
 _data = {
@@ -184,6 +184,7 @@ __meta__ = {
 
 [node name="busPath2" type="Path2D" parent="busContainer"]
 
+editor/display_folded = true
 transform/pos = Vector2( 220, 1170 )
 curve = SubResource( 4 )
 script/script = ExtResource( 4 )
@@ -255,7 +256,8 @@ __meta__ = {
 
 [node name="obstaclePath" type="Path2D" parent="obstacleContainer"]
 
-curve = SubResource( 8 )
+editor/display_folded = true
+curve = SubResource( 5 )
 
 [node name="obstaclePathFollow" type="PathFollow2D" parent="obstacleContainer/obstaclePath"]
 
