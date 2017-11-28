@@ -2,10 +2,6 @@ extends Node
 
 var currentScene
 var unlockedLevels = Array()
-var scores = Array()
-var save_data
-var save_path = "res://config file/highScore.cfg" 
-var savegame = ConfigFile.new()
 
 func _ready():
 	var file = File.new()
