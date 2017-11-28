@@ -7,7 +7,6 @@ var save_data
 var save_path = "res://config file/highScore.cfg" 
 var savegame = ConfigFile.new()
 
-
 func _ready():
 	var file = File.new()
 	if(!file.file_exists(save_path)):
@@ -26,7 +25,6 @@ func _set_score(value,index):
 	var score = savegame.get_value("level","Level" + str(index) + "_Score")
 	if(score == 0 || score > value):
 		savegame.set_value("level","Level" + str(index) + "_Score",value)
-		
 
 func _create_new_save_file():
 	savegame.set_value("info","unlockedLevels", 1)
