@@ -1,62 +1,74 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://textures/pijl.png" type="Texture" id=3]
-[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/level1_achtergrond.PNG" type="Texture" id=3]
+[ext_resource path="res://textures/overlay.png" type="Texture" id=4]
+[ext_resource path="res://scripts/overlay_dissapear.gd" type="Script" id=5]
 
 [node name="main" instance=ExtResource( 1 )]
 
 [node name="screen" parent="."]
 
-editor/display_folded = true
 margin/bottom = 1100.0
 
-[node name="tutorial" type="Node" parent="screen"]
+[node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
-[node name="Eenmaal" type="Label" parent="screen/tutorial"]
+editor/display_folded = true
+transform/pos = Vector2( 360, 1180 )
 
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 459.0
-margin/top = 858.0
-margin/right = 935.0
-margin/bottom = 998.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.341176, 0.368627, 0.380392, 1 )
-text = "Eenmaal"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="busPathFollow" parent="busContainer/busPath"]
 
-[node name="Drukken" type="Label" parent="screen/tutorial"]
+transform/rot = 89.9404
 
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 458.0
-margin/top = 918.0
-margin/right = 934.0
-margin/bottom = 1040.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.341176, 0.368627, 0.380392, 1 )
-text = "Drukken"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="pijl" type="Sprite" parent="screen/tutorial"]
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
 
-transform/pos = Vector2( 499.176, 1049.67 )
-transform/rot = -125.166
-transform/scale = Vector2( 0.283488, 0.283488 )
+[node name="Sprite" type="Sprite" parent="Background"]
+
+transform/pos = Vector2( 362.328, 640.081 )
+transform/scale = Vector2( 1.77289, 1.81428 )
 texture = ExtResource( 3 )
 
-[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+
+visibility/opacity = 0.95
+transform/pos = Vector2( 360.219, 641.148 )
+transform/scale = Vector2( 1.80912, 1.82512 )
+texture = ExtResource( 4 )
+script/script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Sprite"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -149.0
+margin/top = 60.0
+margin/right = 145.0
+margin/bottom = 148.0
+custom_constants/line_spacing = 10
+text = "Leid de bus veilig naar
+de overkant van het scherm.
+
+Druk eenmaal op de bus om te starten."
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
+[editable path="busContainer/busPath"]
