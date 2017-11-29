@@ -1,28 +1,55 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/level/obstacle/obstacle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/level/obstacle/horizontalCenterLeft.tres" type="Animation" id=4]
 [ext_resource path="res://scenes/level/obstacle/horizontalCenterRight.tres" type="Animation" id=5]
+[ext_resource path="res://textures/level1_b.png" type="Texture" id=6]
 
 [node name="main" instance=ExtResource( 1 )]
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
+
+[node name="obstacleContainer" parent="."]
+
+editor/display_folded = true
 
 [node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]
 
 [node name="AnimationPlayer" parent="obstacleContainer/obstaclePath/obstaclePathFollow"]
 
 anims/horizontalCenterLeft = ExtResource( 4 )
+playback/speed = 0.5
 autoplay = "horizontalCenterLeft"
+
+[node name="obstacle" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 191.699, 550 )
 
 [node name="obstaclePath 2" parent="obstacleContainer" instance=ExtResource( 3 )]
 
 [node name="AnimationPlayer" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow"]
 
 anims/horizontalCenterRight = ExtResource( 5 )
+playback/speed = 0.51
 autoplay = "horizontalCenterRight"
+
+[node name="obstacle" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 424.266, 550 )
+
+[node name="background" type="CanvasLayer" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="background"]
+
+transform/pos = Vector2( 360, 640 )
+texture = ExtResource( 6 )
 
 
 [editable path="obstacleContainer/obstaclePath"]

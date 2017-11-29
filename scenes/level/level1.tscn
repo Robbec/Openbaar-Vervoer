@@ -44,21 +44,21 @@ scale = Vector2( 1, 1 )
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 
 visibility/opacity = 0.95
-transform/pos = Vector2( 360.219, 641.148 )
-transform/scale = Vector2( 1.80912, 1.82512 )
+transform/pos = Vector2( 360, 640 )
 texture = ExtResource( 4 )
 script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="CanvasLayer/Sprite"]
 
+rect/scale = Vector2( 1.5, 1.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -144.0
-margin/top = 10.0
-margin/right = 150.0
-margin/bottom = 163.0
+margin/left = -200.0
+margin/top = 7.0
+margin/right = 94.0
+margin/bottom = 160.0
 custom_fonts/font = ExtResource( 6 )
 text = "Leid de bus veilig naar
 de overkant van het scherm.
