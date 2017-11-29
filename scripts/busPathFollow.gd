@@ -10,8 +10,9 @@ func _ready():
 	set_process(true)
 	
 func _on_bus_clicked():
-	print("Bus starts moving.")
+	sound._play_sound("busDriving")
 	moving = true
+	print("Bus starts moving.")
 	
 func stop_moving():
 	moving = false
