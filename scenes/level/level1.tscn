@@ -15,7 +15,6 @@ margin/bottom = 1100.0
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 360, 1180 )
 
 [node name="busPathFollow" parent="busContainer/busPath"]
