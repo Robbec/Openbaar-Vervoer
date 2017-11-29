@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/level1_achtergrond.PNG" type="Texture" id=3]
 [ext_resource path="res://textures/overlay.png" type="Texture" id=4]
 [ext_resource path="res://scripts/overlay_dissapear.gd" type="Script" id=5]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-22.fnt" type="BitmapFont" id=6]
 
 [node name="main" instance=ExtResource( 1 )]
 
@@ -14,7 +15,6 @@ margin/bottom = 1100.0
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 360, 1180 )
 
 [node name="busPathFollow" parent="busContainer/busPath"]
@@ -55,15 +55,16 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -149.0
-margin/top = 60.0
-margin/right = 145.0
-margin/bottom = 148.0
-custom_constants/line_spacing = 10
+margin/left = -144.0
+margin/top = 10.0
+margin/right = 150.0
+margin/bottom = 163.0
+custom_fonts/font = ExtResource( 6 )
 text = "Leid de bus veilig naar
 de overkant van het scherm.
 
-Druk eenmaal op de bus om te starten."
+Druk eenmaal
+op de bus om te starten."
 align = 1
 autowrap = true
 percent_visible = 1.0
