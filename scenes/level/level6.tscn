@@ -10,10 +10,6 @@
 [ext_resource path="res://textures/bus.png" type="Texture" id=8]
 [ext_resource path="res://textures/pixel.png" type="Texture" id=9]
 
-
-
-
-
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0

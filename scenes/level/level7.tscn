@@ -9,10 +9,6 @@
 [ext_resource path="res://scripts/bus.gd" type="Script" id=7]
 [ext_resource path="res://textures/bus.png" type="Texture" id=8]
 
-
-
-
-
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
@@ -20,7 +16,7 @@ _data = {
 "points": Vector2Array( 0, 0, 0, 0, 19.3525, -28.7094, 0, 0, 0, 0, 20.4816, -1113.57 )
 }
 
-[sub_resource type="SampleLibrary" id=5]
+[sub_resource type="SampleLibrary" id=2]
 
 samples/carCrash = {
 "db": 0.0,
@@ -29,19 +25,19 @@ samples/carCrash = {
 "sample": ExtResource( 5 )
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 87.3113, 32.3545 )
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=4]
 
 bake_interval = 5.0
 _data = {
 "points": Vector2Array( 0, 0, 0, 0, 19.4855, -8.16064, 0, 0, 0, 0, 19.4855, -364.337, 0, 0, 0, 0, 429.738, -366.795, 0, 0, 0, 0, 429.738, -1130.87 )
 }
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="Curve2D" id=5]
 
 bake_interval = 5.0
 _data = {
@@ -104,7 +100,7 @@ script/script = ExtResource( 4 )
 [node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath"]
 
 config/polyphony = 1
-config/samples = SubResource( 5 )
+config/samples = SubResource( 2 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -135,7 +131,7 @@ speed = 500
 [node name="bus" type="Area2D" parent="busContainer/busPath/busPathFollow"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -156,7 +152,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath/busPathFollow/bus"]
 
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 __meta__ = {
@@ -167,13 +163,13 @@ __meta__ = {
 
 editor/display_folded = true
 transform/pos = Vector2( 220, 1170 )
-curve = SubResource( 7 )
+curve = SubResource( 4 )
 script/script = ExtResource( 4 )
 
 [node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath 2"]
 
 config/polyphony = 1
-config/samples = SubResource( 5 )
+config/samples = SubResource( 2 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -189,8 +185,8 @@ default/chorus_send = 0.0
 
 [node name="busPathFollow" type="PathFollow2D" parent="busContainer/busPath 2"]
 
-transform/pos = Vector2( 19.3525, -28.7094 )
-transform/rot = 89.9404
+transform/pos = Vector2( 19.4855, -8.16064 )
+transform/rot = 90.0
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -204,7 +200,7 @@ speed = 500
 [node name="bus" type="Area2D" parent="busContainer/busPath 2/busPathFollow"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -225,7 +221,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath 2/busPathFollow/bus"]
 
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 __meta__ = {
@@ -236,13 +232,13 @@ __meta__ = {
 
 editor/display_folded = true
 transform/pos = Vector2( 500, 1170 )
-curve = SubResource( 8 )
+curve = SubResource( 5 )
 script/script = ExtResource( 4 )
 
 [node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath 3"]
 
 config/polyphony = 1
-config/samples = SubResource( 5 )
+config/samples = SubResource( 2 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -258,8 +254,8 @@ default/chorus_send = 0.0
 
 [node name="busPathFollow" type="PathFollow2D" parent="busContainer/busPath 3"]
 
-transform/pos = Vector2( 19.3525, -28.7094 )
-transform/rot = 89.9404
+transform/pos = Vector2( 14.6283, -12.7124 )
+transform/rot = 90.0
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -273,7 +269,7 @@ speed = 500
 [node name="bus" type="Area2D" parent="busContainer/busPath 3/busPathFollow"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -294,7 +290,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath 3/busPathFollow/bus"]
 
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 __meta__ = {

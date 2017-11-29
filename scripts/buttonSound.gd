@@ -1,6 +1,6 @@
 extends TextureButton
-var soundOff = preload("res://textures/soundOff.png")
-var soundOn = preload("res://textures/soundOn.png")
+var soundOff = preload("res://textures/audioOffSmall.png")
+var soundOn = preload("res://textures/audioOnSmall.png")
 var mute = !sound.music
 
 func _ready():
