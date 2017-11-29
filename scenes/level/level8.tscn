@@ -8,23 +8,22 @@
 [ext_resource path="res://scenes/level/obstacle/verticalLeftDown.tres" type="Animation" id=6]
 [ext_resource path="res://scenes/level/obstacle/verticalRightDown.tres" type="Animation" id=7]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
 "points": Vector2Array( 0, 0, 0, 0, 13.4235, -27.9268, 0, 0, 0, 0, 13.4235, -345.944, 0, 0, 0, 0, 438.856, -344.592, 0, 0, 0, 0, 438.856, -974.743 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
 "points": Vector2Array( 0, 0, 0, 0, 25.791, -35.2444, 0, 0, 0, 0, 25.791, -646.301, 0, 0, 0, 0, -291.194, -646.301, 0, 0, 0, 0, -291.194, -967.105 )
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 
-resource/name = "horizontalCenterLeft"
 length = 2.0
 loop = true
 step = 0.1
@@ -39,9 +38,8 @@ tracks/0/keys = {
 "values": [ Vector2( 120, 550 ), Vector2( 600, 550 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource/name = "horizontalCenterLeft"
 length = 2.0
 loop = true
 step = 0.1
@@ -105,12 +103,12 @@ max_lines_visible = -1
 [node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 100, 1170 )
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [node name="busPath 2" parent="busContainer" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 620, 1170 )
-curve = SubResource( 4 )
+curve = SubResource( 2 )
 
 [node name="obstacleContainer" type="Node" parent="."]
 
@@ -118,8 +116,8 @@ curve = SubResource( 4 )
 
 [node name="AnimationPlayer" parent="obstacleContainer/obstaclePath/obstaclePathFollow"]
 
-"anims/horizontalCenter (copy)" = SubResource( 1 )
-"anims/horizontalCenter (copy) (copy)" = SubResource( 2 )
+"anims/horizontalCenter (copy)" = SubResource( 3 )
+"anims/horizontalCenter (copy) (copy)" = SubResource( 4 )
 anims/verticalLeftDown = ExtResource( 6 )
 autoplay = "verticalLeftDown"
 
