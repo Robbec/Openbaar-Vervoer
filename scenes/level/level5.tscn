@@ -25,7 +25,7 @@ autoplay = "horizontalCenterLeft"
 
 [node name="obstacle" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer"]
 
-transform/pos = Vector2( 191.699, 550 )
+transform/pos = Vector2( 150.107, 550 )
 
 [node name="obstaclePath 2" parent="obstacleContainer" instance=ExtResource( 3 )]
 
@@ -37,7 +37,7 @@ autoplay = "horizontalCenterRight"
 
 [node name="obstacle" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow/AnimationPlayer"]
 
-transform/pos = Vector2( 424.266, 550 )
+transform/pos = Vector2( 239.114, 550 )
 
 [node name="background" type="CanvasLayer" parent="."]
 
