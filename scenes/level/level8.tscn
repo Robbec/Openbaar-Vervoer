@@ -1,8 +1,60 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scripts/levelController.gd" type="Script" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
+[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/level/obstacle/obstacle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/level/obstacle/verticalLeftDown.tres" type="Animation" id=6]
+[ext_resource path="res://scenes/level/obstacle/verticalRightDown.tres" type="Animation" id=7]
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 13.4235, -27.9268, 0, 0, 0, 0, 13.4235, -345.944, 0, 0, 0, 0, 438.856, -344.592, 0, 0, 0, 0, 438.856, -974.743 )
+}
+
+[sub_resource type="Curve2D" id=4]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 25.791, -35.2444, 0, 0, 0, 0, 25.791, -646.301, 0, 0, 0, 0, -291.194, -646.301, 0, 0, 0, 0, -291.194, -967.105 )
+}
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "horizontalCenterLeft"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/obstacle:transform/pos")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 550 ), Vector2( 600, 550 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "horizontalCenterLeft"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/obstacle:transform/pos")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 120, 550 ), Vector2( 600, 550 ) ]
+}
 
 [node name="main" type="Node"]
 
@@ -50,6 +102,42 @@ max_lines_visible = -1
 
 [node name="busContainer" type="Node" parent="."]
 
+[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 100, 1170 )
+curve = SubResource( 3 )
+
+[node name="busPath 2" parent="busContainer" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 620, 1170 )
+curve = SubResource( 4 )
+
 [node name="obstacleContainer" type="Node" parent="."]
 
+[node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 5 )]
 
+[node name="AnimationPlayer" parent="obstacleContainer/obstaclePath/obstaclePathFollow"]
+
+"anims/horizontalCenter (copy)" = SubResource( 1 )
+"anims/horizontalCenter (copy) (copy)" = SubResource( 2 )
+anims/verticalLeftDown = ExtResource( 6 )
+autoplay = "verticalLeftDown"
+
+[node name="obstacle" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 220, 200 )
+
+[node name="obstaclePath 2" parent="obstacleContainer" instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow"]
+
+anims/verticalRightDown = ExtResource( 7 )
+autoplay = "verticalRightDown"
+
+[node name="obstacle" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 440, 200 )
+
+
+[editable path="obstacleContainer/obstaclePath"]
+[editable path="obstacleContainer/obstaclePath 2"]
