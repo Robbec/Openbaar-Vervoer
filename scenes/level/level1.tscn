@@ -15,9 +15,11 @@ margin/bottom = 1100.0
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
+transform/pos = Vector2( 360, 1190 )
+
 [node name="busPathFollow" parent="busContainer/busPath"]
 
-transform/rot = 89.9404
+transform/rot = 90.0699
 
 [node name="Background" type="CanvasLayer" parent="."]
 
