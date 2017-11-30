@@ -45,3 +45,5 @@ func _change_to_win_screen():
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 		
+
+		
