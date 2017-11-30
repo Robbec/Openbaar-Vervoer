@@ -34,5 +34,24 @@ transform/rot = 90.0779
 transform/pos = Vector2( 590, 1190 )
 curve = SubResource( 2 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ColorFrame" type="ColorFrame" parent="CanvasLayer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 720.0
+margin/bottom = 1280.0
+color = Color( 0.862745, 0.862745, 0.863373, 1 )
+
 
 [editable path="busContainer/busPath"]
