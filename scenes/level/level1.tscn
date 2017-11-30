@@ -15,8 +15,6 @@ margin/bottom = 1100.0
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 360, 1180 )
-
 [node name="busPathFollow" parent="busContainer/busPath"]
 
 transform/rot = 89.9404
@@ -43,6 +41,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 
+visibility/visible = false
 visibility/opacity = 0.95
 transform/pos = Vector2( 360, 640 )
 texture = ExtResource( 4 )
