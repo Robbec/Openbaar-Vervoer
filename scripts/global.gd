@@ -1,5 +1,6 @@
 extends Node
-
+var localscore = 0
+var maxLevel = 9
 var currentScene
 var unlockedLevels = Array()
 var scores = Array()
@@ -24,7 +25,6 @@ func _set_score(value,index):
 	var score = savegame.get_value("level","Level" + str(index) + "_Score")
 	if(score == 0 || score > value):
 		savegame.set_value("level","Level" + str(index) + "_Score",value)
-
 func _create_new_save_file():
 	savegame.set_value("info","unlockedLevels", 1)
 	for i in range(9):

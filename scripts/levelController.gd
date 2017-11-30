@@ -29,8 +29,9 @@ func _on_bus_arrived():
 	bussesArrived += 1
 	if(bussesArrived == totalBusses):
 		print("All busses have arrived.")
-		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
-		global.unlockedLevels[level] = true
+		_change_to_win_screen()
+		if(level != global.maxLevel):
+			global.unlockedLevels[level] = true
 		measuring = false
 		print(timer)
 		global._set_score(timer,level)
@@ -39,3 +40,8 @@ func _process(delta):
 	if(measuring):
 		timer += delta
 		get_node("screen/timerLabel").set_text(str("%.2f" % timer))
+		
+func _change_to_win_screen():
+		global.localscore = timer
+		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
+		
