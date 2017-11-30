@@ -45,6 +45,7 @@ scale = Vector2( 1, 1 )
 
 [node name="randomColor" type="Sprite" parent="background"]
 
+visibility/visible = false
 transform/scale = Vector2( 720, 1280 )
 texture = ExtResource( 3 )
 centered = false
