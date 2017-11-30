@@ -9,4 +9,4 @@ func _ready():
 	var r = rand_range(0, 1);
 	var g = rand_range(0, 1);
 	var b = rand_range(0, 1);
-	set_modulate(Color(r, g, b, 0.5));
+	set_modulate(Color(r, g, b, 0.25));
