@@ -1,47 +1,22 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/levelController.gd" type="Script" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scripts/busPath.gd" type="Script" id=4]
-[ext_resource path="res://sounds/carCrash.smp" type="Sample" id=5]
-[ext_resource path="res://scripts/busPathFollow.gd" type="Script" id=6]
-[ext_resource path="res://scripts/bus.gd" type="Script" id=7]
-[ext_resource path="res://textures/bus.png" type="Texture" id=8]
+[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 19.3525, -28.7094, 0, 0, 0, 0, 20.4816, -1113.57 )
+"points": Vector2Array( 0, 0, 0, 0, 22.368, -31.9414, 0, 0, 0, 0, 22.368, -358.174, 0, 0, 0, 0, -528.484, -358.174, 0, 0, 0, 0, -528.484, -1101.56 )
 }
 
-[sub_resource type="SampleLibrary" id=2]
-
-samples/carCrash = {
-"db": 0.0,
-"pitch": 1.0,
-"priority": 0,
-"sample": ExtResource( 5 )
-}
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 87.3113, 32.3545 )
-
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 19.4855, -8.16064, 0, 0, 0, 0, 19.4855, -364.337, 0, 0, 0, 0, 429.738, -366.795, 0, 0, 0, 0, 429.738, -1130.87 )
-}
-
-[sub_resource type="Curve2D" id=5]
-
-bake_interval = 5.0
-_data = {
-"points": Vector2Array( 0, 0, 0, 0, 14.6283, -12.7124, 0, 0, 0, 0, 14.6283, -641.674, 0, 0, 0, 0, -358.09, -641.674, 0, 0, 0, 0, -358.09, -1158.82 )
+"points": Vector2Array( 0, 0, 0, 0, 9.17352, -26.5934, 0, 0, 0, 0, 9.17352, -620.23, 0, 0, 0, 0, 426.324, -620.23, 0, 0, 0, 0, 426.324, -1112.25 )
 }
 
 [node name="main" type="Node"]
@@ -90,212 +65,17 @@ max_lines_visible = -1
 
 [node name="busContainer" type="Node" parent="."]
 
-[node name="busPath" type="Path2D" parent="busContainer"]
+[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 360, 1170 )
+[node name="busPath 2" parent="busContainer" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 600, 1170 )
 curve = SubResource( 1 )
-script/script = ExtResource( 4 )
 
-[node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath"]
+[node name="busPath 3" parent="busContainer" instance=ExtResource( 4 )]
 
-config/polyphony = 1
-config/samples = SubResource( 2 )
-default/volume_db = 0.0
-default/pitch_scale = 1.0
-default/pan = 0.0
-default/depth = 0.0
-default/height = 0.0
-default/filter/type = 0
-default/filter/cutoff = 5000.0
-default/filter/resonance = 1.0
-default/filter/gain = 1.0
-default/reverb_room = 2
-default/reverb_send = 0.0
-default/chorus_send = 0.0
-
-[node name="busPathFollow" type="PathFollow2D" parent="busContainer/busPath"]
-
-transform/pos = Vector2( 19.3525, -28.7094 )
-transform/rot = 89.9404
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = false
-lookahead = 4.0
-script/script = ExtResource( 6 )
-speed = 500
-
-[node name="bus" type="Area2D" parent="busContainer/busPath/busPathFollow"]
-
-input/pickable = true
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="busContainer/busPath/busPathFollow/bus"]
-
-transform/rot = -90.0
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 100, 100 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath/busPathFollow/bus"]
-
-shape = SubResource( 3 )
-trigger = true
-_update_shape_index = 0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="busPath 2" type="Path2D" parent="busContainer"]
-
-editor/display_folded = true
-transform/pos = Vector2( 220, 1170 )
-curve = SubResource( 4 )
-script/script = ExtResource( 4 )
-
-[node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath 2"]
-
-config/polyphony = 1
-config/samples = SubResource( 2 )
-default/volume_db = 0.0
-default/pitch_scale = 1.0
-default/pan = 0.0
-default/depth = 0.0
-default/height = 0.0
-default/filter/type = 0
-default/filter/cutoff = 5000.0
-default/filter/resonance = 1.0
-default/filter/gain = 1.0
-default/reverb_room = 2
-default/reverb_send = 0.0
-default/chorus_send = 0.0
-
-[node name="busPathFollow" type="PathFollow2D" parent="busContainer/busPath 2"]
-
-transform/pos = Vector2( 19.4855, -8.16064 )
-transform/rot = 90.0
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = false
-lookahead = 4.0
-script/script = ExtResource( 6 )
-speed = 500
-
-[node name="bus" type="Area2D" parent="busContainer/busPath 2/busPathFollow"]
-
-input/pickable = true
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="busContainer/busPath 2/busPathFollow/bus"]
-
-transform/rot = -90.0
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 100, 100 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath 2/busPathFollow/bus"]
-
-shape = SubResource( 3 )
-trigger = true
-_update_shape_index = 0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="busPath 3" type="Path2D" parent="busContainer"]
-
-editor/display_folded = true
-transform/pos = Vector2( 500, 1170 )
-curve = SubResource( 5 )
-script/script = ExtResource( 4 )
-
-[node name="SamplePlayer" type="SamplePlayer" parent="busContainer/busPath 3"]
-
-config/polyphony = 1
-config/samples = SubResource( 2 )
-default/volume_db = 0.0
-default/pitch_scale = 1.0
-default/pan = 0.0
-default/depth = 0.0
-default/height = 0.0
-default/filter/type = 0
-default/filter/cutoff = 5000.0
-default/filter/resonance = 1.0
-default/filter/gain = 1.0
-default/reverb_room = 2
-default/reverb_send = 0.0
-default/chorus_send = 0.0
-
-[node name="busPathFollow" type="PathFollow2D" parent="busContainer/busPath 3"]
-
-transform/pos = Vector2( 14.6283, -12.7124 )
-transform/rot = 90.0
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = false
-lookahead = 4.0
-script/script = ExtResource( 6 )
-speed = 500
-
-[node name="bus" type="Area2D" parent="busContainer/busPath 3/busPathFollow"]
-
-input/pickable = true
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="busContainer/busPath 3/busPathFollow/bus"]
-
-transform/rot = -90.0
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 100, 100 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="busContainer/busPath 3/busPathFollow/bus"]
-
-shape = SubResource( 3 )
-trigger = true
-_update_shape_index = 0
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( 180, 1170 )
+curve = SubResource( 2 )
 
 [node name="obstacleContainer" type="Node" parent="."]
 
