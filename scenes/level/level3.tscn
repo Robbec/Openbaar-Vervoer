@@ -36,14 +36,14 @@ transform/rot = 90.0779
 transform/pos = Vector2( 590, 1190 )
 curve = SubResource( 2 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="background" type="CanvasLayer" parent="."]
 
 layer = -128
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+[node name="randomColor" type="Sprite" parent="background"]
 
 transform/scale = Vector2( 720, 1280 )
 texture = ExtResource( 3 )
