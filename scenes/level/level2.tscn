@@ -9,6 +9,8 @@
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
+transform/pos = Vector2( 360, 1190 )
+
 [node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]
 
 [node name="Background" type="CanvasLayer" parent="."]
