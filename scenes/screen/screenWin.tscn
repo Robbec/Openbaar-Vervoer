@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scripts/score.gd" type="Script" id=4]
-[ext_resource path="res://scenes/screen/screenButtons/buttonNext.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/screen/screenButtons/buttonRetry.tscn" type="PackedScene" id=6]
-[ext_resource path="res://textures/brons.jpg" type="Texture" id=7]
-[ext_resource path="res://scripts/trophy.gd" type="Script" id=8]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
+[ext_resource path="res://scripts/winText.gd" type="Script" id=4]
+[ext_resource path="res://scenes/timerLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-75.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://scenes/screen/screenButtons/buttonNext.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/screen/screenButtons/buttonRetry.tscn" type="PackedScene" id=8]
+[ext_resource path="res://textures/brons.jpg" type="Texture" id=9]
+[ext_resource path="res://scripts/trophy.gd" type="Script" id=10]
 
 [node name="Win" type="Sprite"]
 
@@ -23,16 +25,18 @@ margin/top = 30.0
 margin/right = 90.9
 margin/bottom = 111.15
 
-[node name="WinText" type="Label" parent="."]
+[node name="winText" type="Label" parent="."]
 
+anchor/left = 2
+anchor/right = 2
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 133.0
-margin/right = 720.0
-margin/bottom = 264.0
+margin/top = 200.0
+margin/right = 1.0
+margin/bottom = 300.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Arrived"
@@ -40,54 +44,28 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="Score" type="Label" parent="."]
-
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 116.0
-margin/top = 381.0
-margin/right = 524.0
-margin/bottom = 512.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "SCORE:"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="ScoreLabel" type="Label" parent="."]
-
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 370.0
-margin/top = 381.0
-margin/right = 778.0
-margin/bottom = 512.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 script/script = ExtResource( 4 )
 
-[node name="NextButton" parent="." instance=ExtResource( 5 )]
+[node name="timerLabel" parent="winText" instance=ExtResource( 5 )]
 
-[node name="RetryButton" parent="." instance=ExtResource( 6 )]
+anchor/left = 2
+anchor/top = 1
+anchor/right = 2
+margin/left = 0.25
+margin/top = -30.0
+margin/right = 0.75
+margin/bottom = 193.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="NextButton" parent="." instance=ExtResource( 7 )]
+
+[node name="RetryButton" parent="." instance=ExtResource( 8 )]
 
 [node name="trophy" type="Sprite" parent="."]
 
 transform/pos = Vector2( 375.398, 704.256 )
 transform/scale = Vector2( 0.85, 0.85 )
-texture = ExtResource( 7 )
-script/script = ExtResource( 8 )
+texture = ExtResource( 9 )
+script/script = ExtResource( 10 )
 
 
