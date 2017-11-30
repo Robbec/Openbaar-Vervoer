@@ -3,7 +3,7 @@ var localscore = 0
 var maxLevel = 9
 var currentScene
 var unlockedLevels = Array()
-var highscores = Array()
+var scores = Array()
 var save_data
 var save_path = "res://config file/highScore.cfg" 
 var savegame = ConfigFile.new()
@@ -38,5 +38,6 @@ func _notification(what):
 		print(str(unlockedLevels.count(true)))
 		savegame.set_value("info","unlockedLevels",unlockedLevels.count(true))
 		savegame.save(save_path)
+
 func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")

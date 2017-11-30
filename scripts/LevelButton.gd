@@ -1,4 +1,5 @@
 extends Button
+
 var gold = preload("res://textures/goudkleur.jpg")
 var silver = preload("res://textures/zilverkleur.jpg")
 var brons = preload("res://textures/bronskleur.jpg")
@@ -14,10 +15,10 @@ func _ready():
 	elif(score < 4):
 		_change_score_texture(gold)
 	elif(score < 6):
-		print("b")
 		_change_score_texture(silver)
 	elif(score < 10):
 		_change_score_texture(brons)
+	get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
 		
 func _pressed():
 	get_tree().change_scene("res://scenes/level/level" + str(level) + ".tscn");
