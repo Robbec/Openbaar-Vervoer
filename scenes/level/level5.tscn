@@ -11,7 +11,7 @@
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 18.9064, -32.9457, 0, 0, 0, 0, 20.7012, -1114.54 )
+"points": Vector2Array( 0, 0, 0, 0, 18.9064, -32.9457, 0, 0, 0, 0, 19.3724, -1187.94 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -23,9 +23,11 @@ extents = Vector2( 10, 10 )
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
+transform/pos = Vector2( 360, 1190 )
+
 [node name="busPath 2" parent="busContainer" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 600, 1170 )
+transform/pos = Vector2( 590, 1190 )
 curve = SubResource( 1 )
 
 [node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]

@@ -12,14 +12,14 @@
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 13.4235, -27.9268, 0, 0, 0, 0, 13.4235, -345.944, 0, 0, 0, 0, 438.856, -344.592, 0, 0, 0, 0, 438.856, -974.743 )
+"points": Vector2Array( 0, 0, 0, 0, 13.4235, -27.9268, 0, 0, 0, 0, 13.4235, -345.944, 0, 0, 0, 0, 438.733, -347.724, 0, 0, 0, 0, 438.733, -1194.48 )
 }
 
 [sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, 0, 0, 25.791, -35.2444, 0, 0, 0, 0, 25.791, -646.301, 0, 0, 0, 0, -291.194, -646.301, 0, 0, 0, 0, -291.194, -967.105 )
+"points": Vector2Array( 0, 0, 0, 0, 25.791, -35.2444, 0, 0, 0, 0, 25.791, -646.301, 0, 0, 0, 0, -257.235, -645.233, 0, 0, 0, 0, -257.235, -1180.75 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -102,12 +102,12 @@ max_lines_visible = -1
 
 [node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 100, 1170 )
+transform/pos = Vector2( 100, 1190 )
 curve = SubResource( 1 )
 
 [node name="busPath 2" parent="busContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 620, 1170 )
+transform/pos = Vector2( 590, 1190 )
 curve = SubResource( 2 )
 
 [node name="obstacleContainer" type="Node" parent="."]
