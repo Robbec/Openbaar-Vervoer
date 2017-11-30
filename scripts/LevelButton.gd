@@ -19,8 +19,6 @@ func _ready():
 	elif(score < 10):
 		_change_score_texture(brons)
 	get_child(0).set_text(str("%.2f" % score).replace(".",":"))
-	if (score == 0):
-		get_child(0).set_text("0:00")
 		
 func _pressed():
 	get_tree().change_scene("res://scenes/level/level" + str(level) + ".tscn");

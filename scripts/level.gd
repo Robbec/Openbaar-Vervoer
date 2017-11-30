@@ -20,26 +20,24 @@ func _ready():
 	print(global.unlockedLevels)
 	
 func _on_bus_clicked():
-	
 	print("Start measuring time.")
 	measuring = true
 
 func _on_bus_arrived():
-	print("Start arrived")
+	print("Bus has arrived.")
 	bussesArrived += 1
 	if(bussesArrived == totalBusses):
+		measuring = false
 		print("All busses have arrived.")
-		_change_to_win_screen()
 		if(level != global.maxLevel):
 			global.unlockedLevels[level] = true
-		measuring = false
-		print(timer)
 		global._set_score(timer,level)
+		_change_to_win_screen()
 	
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("screen/timerLabel").set_text(str("%.2f" % timer))
+		get_node("screen/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))
 		
 func _change_to_win_screen():
 		global.localscore = timer

@@ -488,25 +488,6 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "1"
 
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 1"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -2.0
-margin/top = 214.0
-margin/right = 38.0
-margin/bottom = 245.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="levelButton 2" parent="screen" instance=ExtResource( 5 )]
 
 margin/left = 230.0
@@ -517,25 +498,6 @@ custom_styles/hover = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "2"
-
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 2"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 2.0
-margin/top = 214.0
-margin/right = 42.0
-margin/bottom = 245.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="levelButton 3" parent="screen" instance=ExtResource( 5 )]
 
@@ -548,25 +510,6 @@ custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "3"
 
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 3"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 4.0
-margin/top = 217.0
-margin/right = 44.0
-margin/bottom = 248.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="levelButton 4" parent="screen" instance=ExtResource( 5 )]
 
 margin/top = 427.0
@@ -575,25 +518,6 @@ custom_styles/hover = SubResource( 9 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "4"
-
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 4"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 1.0
-margin/top = 221.0
-margin/right = 41.0
-margin/bottom = 252.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="levelButton 5" parent="screen" instance=ExtResource( 5 )]
 
@@ -606,25 +530,6 @@ custom_styles/disabled = SubResource( 13 )
 custom_styles/normal = SubResource( 14 )
 text = "5"
 
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 5"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 219.0
-margin/right = 40.0
-margin/bottom = 250.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="levelButton 6" parent="screen" instance=ExtResource( 5 )]
 
 margin/left = 460.0
@@ -636,25 +541,6 @@ custom_styles/disabled = SubResource( 16 )
 custom_styles/normal = SubResource( 17 )
 text = "6"
 
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 6"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 1.0
-margin/top = 216.0
-margin/right = 41.0
-margin/bottom = 247.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="levelButton 7" parent="screen" instance=ExtResource( 5 )]
 
 margin/top = 707.0
@@ -663,25 +549,6 @@ custom_styles/hover = SubResource( 18 )
 custom_styles/disabled = SubResource( 19 )
 custom_styles/normal = SubResource( 20 )
 text = "7"
-
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 7"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 3.0
-margin/top = 226.0
-margin/right = 43.0
-margin/bottom = 257.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="levelButton 8" parent="screen" instance=ExtResource( 5 )]
 
@@ -694,25 +561,6 @@ custom_styles/disabled = SubResource( 22 )
 custom_styles/normal = SubResource( 23 )
 text = "8"
 
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 8"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -2.0
-margin/top = 234.0
-margin/right = 38.0
-margin/bottom = 265.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="levelButton 9" parent="screen" instance=ExtResource( 5 )]
 
 margin/left = 460.0
@@ -723,24 +571,5 @@ custom_styles/hover = SubResource( 24 )
 custom_styles/disabled = SubResource( 25 )
 custom_styles/normal = SubResource( 26 )
 text = "9"
-
-[node name="ScoreLabel" type="Label" parent="screen/levelButton 9"]
-
-rect/scale = Vector2( 5, 5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 226.0
-margin/right = 40.0
-margin/bottom = 257.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00
-"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 
