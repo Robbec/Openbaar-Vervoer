@@ -13,7 +13,7 @@ func add_record(time, level, won):
     while( http.get_status()==HTTPClient.STATUS_CONNECTING or http.get_status()==HTTPClient.STATUS_RESOLVING):
         http.poll()
         #print("Connecting..")
-        OS.delay_msec(50)
+        OS.delay_msec(100)
  
     if(http.get_status() != HTTPClient.STATUS_CONNECTED ): # Could not connect
     	return
@@ -25,10 +25,10 @@ func add_record(time, level, won):
     ]
 
     var id = OS.get_name() + "-" + OS.get_unique_ID()
-    #print("/MMI/logUserData.php?user=robbe&level="+str(level)+"&time="+str(time)+"&won="+str(won)+"&control=OpenbaarVervoer")
     err = http.request(HTTPClient.METHOD_GET,"/MMI/logUserData.php?user="+id+"&level="+str(level)+"&time="+str(time)+"&won="+str(won)+"&control=OpenbaarVervoer",headers) # Request a page from the site (this one was chunked..)
  
-    assert( err == OK ) # Make sure all is OK
+    if( err != OK ): # Make sure all is OK
+    	return
     print("logged for "+id)
     return
  

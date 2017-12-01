@@ -32,13 +32,13 @@ func _on_bus_arrived():
 	print("Bus has arrived.")
 	bussesArrived += 1
 	if(bussesArrived == totalBusses):
+		HTTPLogging.add_record(timer,level,true)
 		measuring = false
 		print("All busses have arrived.")
 		if(level != global.maxLevel):
 			global.unlockedLevels[level] = true
 		global._set_score(timer,level)
 		global.localscore = timer
-		HTTPLogging.add_record(timer,level,true)
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 	
 func _process(delta):
