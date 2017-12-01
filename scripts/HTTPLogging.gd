@@ -7,16 +7,16 @@ func add_record(time, level, won):
     var http = HTTPClient.new() # Create the Client
  
     var err = http.connect("http://robbe.000webhostapp.com",80) # Connect to host/port
-    assert(err==OK) # Make sure connection was OK
- 
+    if(err!=OK): # Make sure connection was OK
+    	return
     # Wait until resolved and connected
     while( http.get_status()==HTTPClient.STATUS_CONNECTING or http.get_status()==HTTPClient.STATUS_RESOLVING):
         http.poll()
         #print("Connecting..")
         OS.delay_msec(50)
  
-    assert( http.get_status() == HTTPClient.STATUS_CONNECTED ) # Could not connect
- 
+    if(http.get_status() != HTTPClient.STATUS_CONNECTED ): # Could not connect
+    	return
     # Some headers
  
     var headers=[
