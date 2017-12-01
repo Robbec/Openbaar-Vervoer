@@ -38,6 +38,7 @@ func _on_bus_arrived():
 			global.unlockedLevels[level] = true
 		global._set_score(timer,level)
 		global.localscore = timer
+		HTTPLogging.add_record(timer,level,true)
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 	
 func _process(delta):
