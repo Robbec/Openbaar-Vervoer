@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/level1_achtergrond.PNG" type="Texture" id=3]
 [ext_resource path="res://textures/overlay.png" type="Texture" id=4]
-[ext_resource path="res://scripts/overlay_dissapear.gd" type="Script" id=5]
+[ext_resource path="res://scripts/overlay.gd" type="Script" id=5]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-50.fnt" type="BitmapFont" id=6]
 
 [node name="main" instance=ExtResource( 1 )]
