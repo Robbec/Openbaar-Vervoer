@@ -7,6 +7,11 @@ var measuring = false
 var timer = 0
 
 func _ready():
+	get_viewport().queue_screen_capture()
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	var capture = get_viewport().get_screen_capture()
+	capture.save_png("res://textures/screenshot.png")
 	regexp.compile("\\level(.).tscn")
 	regexp.find(filename)
 	level = int(regexp.get_captures()[1])
