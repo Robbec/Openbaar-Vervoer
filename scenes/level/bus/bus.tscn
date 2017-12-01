@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/busPath.gd" type="Script" id=1]
 [ext_resource path="res://sounds/carCrash.smp" type="Sample" id=2]
@@ -26,6 +26,23 @@ samples/carCrash = {
 
 custom_solver_bias = 0.0
 extents = Vector2( 87.3113, 32.3545 )
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "shakingBus"
+length = 0.1
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.025, 0.05, 0.075, 0.1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -90.0, -92.0, -90.0, -88.0, -90.0 ]
+}
 
 [node name="busPath" type="Path2D"]
 
@@ -76,21 +93,32 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="busPathFollow/bus"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="busPathFollow/bus"]
 
-transform/rot = -90.0
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 100, 100 )
-__meta__ = {
-"_edit_lock_": true
-}
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/shakingBus = SubResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "shakingBus"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busPathFollow/bus"]
 
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="busPathFollow/bus"]
+
+transform/rot = -90.9261
+transform/scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 100, 100 )
 __meta__ = {
 "_edit_lock_": true
 }

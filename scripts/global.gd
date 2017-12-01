@@ -35,7 +35,6 @@ func _create_new_save_file():
 	
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		print(str(unlockedLevels.count(true)))
 		savegame.set_value("info","unlockedLevels",unlockedLevels.count(true))
 		savegame.save(save_path)
 
