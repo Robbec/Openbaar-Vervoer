@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://scripts/levelController.gd" type="Script" id=1]
+[ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
+[ext_resource path="res://scenes/timerLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=4]
 
-[node name="main" type="Node"]
+[node name="level" type="Node"]
 
 script/script = ExtResource( 1 )
 
@@ -29,24 +30,11 @@ __meta__ = {
 margin/right = 60.9
 margin/bottom = 81.15
 
-[node name="timerLabel" type="Label" parent="screen"]
+[node name="timerLabel" parent="screen" instance=ExtResource( 3 )]
 
 anchor/right = 1
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 131.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0.00"
+custom_fonts/font = ExtResource( 4 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="busContainer" type="Node" parent="."]
 

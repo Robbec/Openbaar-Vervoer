@@ -1,43 +1,14 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://textures/pixel.png" type="Texture" id=1]
-[ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scenes/screen/screenButtons/buttonRetry.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/screen/screenTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/screen/screenButtons/buttonRetry.tscn" type="PackedScene" id=2]
 
-[node name="Sprite" type="Sprite"]
+[node name="main" instance=ExtResource( 1 )]
 
-texture = ExtResource( 1 )
-centered = false
-region = true
-region_rect = Rect2( 0, 0, 720, 1280 )
+[node name="screenText" parent="screen"]
 
-[node name="MenuButton" parent="." instance=ExtResource( 2 )]
+text = "delayed"
 
-margin/left = 30.0
-margin/top = 30.0
-margin/right = 90.9
-margin/bottom = 111.15
-
-[node name="LoseText" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 133.0
-margin/right = 720.0
-margin/bottom = 264.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Delayed"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Node" parent="." instance=ExtResource( 4 )]
+[node name="Node" parent="." instance=ExtResource( 2 )]
 
 
-[editable path="MenuButton"]

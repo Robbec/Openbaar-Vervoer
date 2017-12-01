@@ -25,6 +25,7 @@ func _set_score(value,index):
 	var score = savegame.get_value("level","Level" + str(index) + "_Score")
 	if(score == 0 || score > value):
 		savegame.set_value("level","Level" + str(index) + "_Score",value)
+
 func _create_new_save_file():
 	savegame.set_value("info","unlockedLevels", 1)
 	for i in range(9):
@@ -37,5 +38,6 @@ func _notification(what):
 		print(str(unlockedLevels.count(true)))
 		savegame.set_value("info","unlockedLevels",unlockedLevels.count(true))
 		savegame.save(save_path)
+
 func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
