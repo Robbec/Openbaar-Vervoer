@@ -7,6 +7,11 @@ var measuring = false
 var timer = 0
 
 func _ready():
+	get_viewport().queue_screen_capture()
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	var capture = get_viewport().get_screen_capture()
+	capture.save_png("res://textures/screenshot.png")
 	regexp.compile("\\level(.).tscn")
 	regexp.find(filename)
 	level = int(regexp.get_captures()[1])
@@ -20,31 +25,22 @@ func _ready():
 	print(global.unlockedLevels)
 	
 func _on_bus_clicked():
-	
 	print("Start measuring time.")
 	measuring = true
 
 func _on_bus_arrived():
-	print("Start arrived")
+	print("Bus has arrived.")
 	bussesArrived += 1
 	if(bussesArrived == totalBusses):
+		measuring = false
 		print("All busses have arrived.")
-		_change_to_win_screen()
 		if(level != global.maxLevel):
 			global.unlockedLevels[level] = true
-		measuring = false
-		print(timer)
-		HTTPlogging.add_record(timer,level,true)
 		global._set_score(timer,level)
+		global.localscore = timer
+		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 	
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("screen/timerLabel").set_text(str("%.2f" % timer))
-		
-func _change_to_win_screen():
-		global.localscore = timer
-		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
-		
-
-		
+		get_node("screen/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))

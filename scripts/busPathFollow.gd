@@ -21,7 +21,6 @@ func _process(delta):
 	if moving:
 		set_offset(get_offset() + speed * delta)
 	if get_unit_offset() > 0.99 and moving:
-		emit_signal("busArrived")
-		print("Bus has arrived.")		
 		moving = false
 		queue_free()
+		emit_signal("busArrived")
