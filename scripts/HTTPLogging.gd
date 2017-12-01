@@ -30,7 +30,7 @@ func add_record(time, level, won):
     if( err != OK ): # Make sure all is OK
     	return
     print("logged for "+id)
-    return
+    
  
     while (http.get_status() == HTTPClient.STATUS_REQUESTING):
         # Keep polling until the request is going on
@@ -38,6 +38,35 @@ func add_record(time, level, won):
         print("Requesting..")
         OS.delay_msec(500)
  
- 
+
     assert( http.get_status() == HTTPClient.STATUS_BODY or http.get_status() == HTTPClient.STATUS_CONNECTED ) # Make sure request finished well.
  
+    print("response? ",http.has_response()) # Site might not have a response.
+ 
+    if (http.has_response()):
+        # If there is a response..
+ 
+        var headers = http.get_response_headers_as_dictionary() # Get response headers
+        print("code: ",http.get_response_code()) # Show response code
+        print("**headers:\\n",headers) # Show headers
+ 
+        # Getting the HTTP Body
+ 
+        if (http.is_response_chunked()):
+            # Does it use chunks?
+            print("Response is Chunked!")
+        else:
+            # Or just plain Content-Length
+            var bl = http.get_response_body_length()
+            print("Response Length: ",bl)
+ 
+        # This method works for both anyway
+ 
+        var rb = RawArray() # Array that will hold the data
+ 
+        while(http.get_status()==HTTPClient.STATUS_BODY):
+            # While there is body left to be read
+            http.poll()
+            var chunk = http.read_response_body_chunk() # Get a chunk
+            if (chunk.size()==0):
+                # Got nothing, wait for buffers to fill a bit
