@@ -29,7 +29,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "We developed this game for the course 'Fundamentals of Men-Machine Interaction' at KU Leuven. While you are playing the game, we record some basic metrics in order to analyse how well you interact with the game controls. No need to worry about privacy! We only track:
 
  - The time you need to complete level 1
- - A unique ID"
+ - A unique ID
+
+Credit font Style-7: Sizenko Alexander (www.styleseven.com)"
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
