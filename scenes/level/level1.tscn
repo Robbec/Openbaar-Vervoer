@@ -5,7 +5,7 @@
 [ext_resource path="res://textures/level1_achtergrond.PNG" type="Texture" id=3]
 [ext_resource path="res://textures/overlay.png" type="Texture" id=4]
 [ext_resource path="res://scripts/overlay.gd" type="Script" id=5]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-50.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-22.fnt" type="BitmapFont" id=6]
 
 [node name="main" instance=ExtResource( 1 )]
 
@@ -41,29 +41,30 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="overlay" type="Sprite" parent="CanvasLayer"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
 
 visibility/opacity = 0.95
 transform/pos = Vector2( 360, 640 )
 texture = ExtResource( 4 )
 script/script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="CanvasLayer/overlay"]
+[node name="Label" type="Label" parent="CanvasLayer/Sprite"]
 
 rect/scale = Vector2( 1.5, 1.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -330.0
-margin/top = -270.0
-margin/right = 110.0
-margin/bottom = 68.0
+margin/left = -200.0
+margin/top = 7.0
+margin/right = 94.0
+margin/bottom = 160.0
 custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Safely lead the bus to the other side of the screen.
+text = "Leid de bus veilig naar
+de overkant van het scherm.
 
-Press the bus once to start."
+Druk eenmaal
+op de bus om te starten."
 align = 1
 autowrap = true
 percent_visible = 1.0
