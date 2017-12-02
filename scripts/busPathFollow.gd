@@ -18,6 +18,9 @@ func stop_moving():
 	moving = false
 	
 func _process(delta):
+	var bus = get_node("/root/main/busContainer/busPath/busPathFollow/CanvasLayer/Sprite")
+	var col = get_node("/root/main/busContainer/busPath/busPathFollow/bus/CollisionShape2")
+	var pos = bus.get_pos()
 	if moving:
 		set_offset(get_offset() + speed * delta)
 	if get_unit_offset() > 0.99 and moving:
