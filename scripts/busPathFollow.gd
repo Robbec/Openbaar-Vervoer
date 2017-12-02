@@ -11,6 +11,7 @@ func _ready():
 	
 func _on_bus_clicked():
 	get_node("bus/Sprite/AnimationPlayer").stop();
+	get_node("bus/Sprite").set_rotd(-90);
 	sound._play_sound("busDriving")
 	moving = true
 	print("Bus starts moving.")
