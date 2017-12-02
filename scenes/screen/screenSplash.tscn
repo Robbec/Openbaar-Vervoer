@@ -1,43 +1,97 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-75.fnt" type="BitmapFont" id=1]
-[ext_resource path="res://scripts/buttonPlay.gd" type="Script" id=2]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=1]
+[ext_resource path="res://scripts/busPath.gd" type="Script" id=2]
+[ext_resource path="res://scripts/busPathFollowSplash.gd" type="Script" id=3]
+[ext_resource path="res://textures/freebus.png" type="Texture" id=4]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-25.fnt" type="BitmapFont" id=5]
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, -530, -500, 0, 0, 0, 0, 540, -500 )
+}
 
 [node name="Node" type="Node"]
 
-[node name="Control" type="Control" parent="."]
-
-anchor/left = 2
-anchor/top = 2
-anchor/right = 2
-anchor/bottom = 2
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.33
-margin/top = 0.66
-margin/right = 0.66
-margin/bottom = 0.33
-
-[node name="Button" type="Button" parent="Control"]
+[node name="title" type="Label" parent="."]
 
 anchor/left = 2
 anchor/right = 2
-focus/ignore_mouse = false
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
+size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 1.0
-margin/bottom = 0.0
+margin/bottom = 600.0
 custom_fonts/font = ExtResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Play"
-flat = false
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Delayed"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="busPath" type="Path2D" parent="."]
+
+transform/pos = Vector2( 360, 1170 )
+curve = SubResource( 2 )
 script/script = ExtResource( 2 )
 
+[node name="busPathFollow" type="PathFollow2D" parent="busPath"]
+
+transform/pos = Vector2( -530, -500 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = false
+lookahead = 4.0
+script/script = ExtResource( 3 )
+speed = 400
+
+[node name="bus" type="Area2D" parent="busPath/busPathFollow"]
+
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="Sprite" type="Sprite" parent="busPath/busPathFollow/bus"]
+
+transform/rot = -90.0
+transform/scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 100 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="copyright" type="Label" parent="."]
+
+anchor/left = 2
+anchor/top = 1
+anchor/right = 2
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 50.0
+margin/right = 1.0
+margin/bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "© 2017"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 

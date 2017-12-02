@@ -44,4 +44,6 @@ func _on_bus_arrived():
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("menu/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))
+		get_node("menu/timerLabel").set_text(str("%.2f" % timer))
+	if (timer >= 99):
+		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
