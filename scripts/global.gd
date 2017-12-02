@@ -1,4 +1,5 @@
 extends Node
+var version = 0
 var localscore = 0
 var maxLevel = 9
 var currentScene
