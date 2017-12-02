@@ -31,10 +31,6 @@ transform/pos = Vector2( 362.328, 640.081 )
 transform/scale = Vector2( 1.77289, 1.81428 )
 texture = ExtResource( 3 )
 
-[node name="Background" parent="."]
-
-layer = -1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 layer = 1
