@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://textures/busgeel.png" type="Texture" id=5]
 [ext_resource path="res://textures/retrySmall.png" type="Texture" id=6]
 [ext_resource path="res://scripts/buttonRetry.gd" type="Script" id=7]
+[ext_resource path="res://scripts/versionBackground.gd" type="Script" id=8]
 
 [node name="level" type="Node"]
 
@@ -89,5 +90,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Background"]
+
+script/script = ExtResource( 8 )
 
 
