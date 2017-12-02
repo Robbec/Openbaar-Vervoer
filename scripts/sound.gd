@@ -4,6 +4,7 @@ var player = SamplePlayer.new()
 var sampleCarCrash = preload("res://sounds/carCrash.smp")
 var sampleBusStarting = preload("res://sounds/busStarting.smp")
 var sampleBusDriving = preload("res://sounds/busDriving.smp")
+var sampleSucces = preload("res://sounds/applause.wav")
 var music = true
 var library = SampleLibrary.new()
 
@@ -11,6 +12,7 @@ func _ready():
 	library.add_sample("carCrash", sampleCarCrash);
 	library.add_sample("busStarting", sampleBusStarting);
 	library.add_sample("busDriving", sampleBusDriving);
+	library.add_sample("win",sampleSucces)
 	player.set_sample_library(library);
 
 func _play_sound(filename):

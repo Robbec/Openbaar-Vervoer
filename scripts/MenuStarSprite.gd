@@ -9,7 +9,6 @@ var star3 = preload("res://textures/3 sterren.png")
 
 func _ready():
 	var level = int(get_parent().get_text())
-	print(global._get_score(level))
 	if(global._get_score(level) == 0 || global._get_score(level) > 8):
 		set_texture(star0)
 	elif(global._get_score(level) < 4):
