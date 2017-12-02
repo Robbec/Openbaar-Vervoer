@@ -8,6 +8,7 @@ var scores = Array()
 var save_data
 var save_path = "res://config file/highScore.cfg" 
 var savegame = ConfigFile.new()
+var highscore = false
 
 func _ready():
 	var file = File.new()
@@ -26,6 +27,7 @@ func _set_score(value,index):
 	var score = savegame.get_value("level","Level" + str(index) + "_Score")
 	if(score == 0 || score > value):
 		savegame.set_value("level","Level" + str(index) + "_Score",value)
+		highscore = true
 
 func _create_new_save_file():
 	savegame.set_value("info","unlockedLevels", 1)
@@ -41,3 +43,11 @@ func _notification(what):
 
 func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
+	
+func _is_new_highscore():
+	if(highscore):
+		highscore = false
+		return true
+	else:
+		return false
+	 
