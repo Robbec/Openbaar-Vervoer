@@ -34,7 +34,7 @@ length = 0.1
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Sprite:transform/rot")
+tracks/0/path = NodePath("Sprite:transform/rot")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -98,6 +98,17 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 4 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="busPathFollow/bus"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/shakingBus = SubResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "shakingBus"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busPathFollow/bus"]
 
 z/z = -4096
@@ -112,23 +123,12 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="busPathFollow/bus"]
 
 transform/pos = Vector2( 0.000610352, 0.000488281 )
-transform/rot = -89.4325
+transform/rot = -90.0
 transform/scale = Vector2( 0.3, 0.3 )
 region_rect = Rect2( 0, 0, 100, 100 )
 script/script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="busPathFollow/bus/Sprite"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/shakingBus = SubResource( 4 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "shakingBus"
 
 
