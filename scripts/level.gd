@@ -45,3 +45,5 @@ func _process(delta):
 	if(measuring):
 		timer += delta
 		get_node("screen/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))
+	if (timer >= 99):
+		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
