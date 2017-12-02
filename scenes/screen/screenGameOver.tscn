@@ -12,3 +12,4 @@ text = "delayed"
 [node name="Node" parent="." instance=ExtResource( 2 )]
 
 
+[editable path="screen/menuButton"]

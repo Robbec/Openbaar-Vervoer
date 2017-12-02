@@ -44,4 +44,4 @@ func _on_bus_arrived():
 func _process(delta):
 	if(measuring):
 		timer += delta
-		get_node("screen/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))
+		get_node("menu/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))

@@ -1,6 +1,6 @@
 extends Sprite
-var gold = preload("res://textures/goud.jpg")
-var silver = preload("res://textures/zilver.jpg")
+var gold = preload("res://textures/3 sterren.png")
+var silver = preload("res://textures/2 sterren.png")
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"

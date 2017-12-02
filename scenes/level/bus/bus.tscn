@@ -34,7 +34,7 @@ length = 0.1
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:transform/rot")
+tracks/0/path = NodePath("../Sprite:transform/rot")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -47,6 +47,8 @@ tracks/0/keys = {
 [node name="busPath" type="Path2D"]
 
 transform/pos = Vector2( 360, 1170 )
+z/z = -4096
+z/relative = false
 curve = SubResource( 1 )
 script/script = ExtResource( 1 )
 
@@ -71,6 +73,8 @@ default/chorus_send = 0.0
 
 transform/pos = Vector2( 19.3525, -28.7094 )
 transform/rot = 89.9404
+z/z = -4096
+z/relative = false
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -83,6 +87,7 @@ speed = 500
 
 [node name="bus" type="Area2D" parent="busPathFollow"]
 
+z/z = -4096
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -106,6 +111,8 @@ autoplay = "shakingBus"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="busPathFollow/bus"]
 
+z/z = -4096
+z/relative = false
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
@@ -115,8 +122,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="busPathFollow/bus"]
 
-transform/rot = -90.0
+transform/pos = Vector2( 0.000610352, 0.000488281 )
+transform/rot = -89.4325
 transform/scale = Vector2( 0.3, 0.3 )
+z/z = 1
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 100, 100 )
 __meta__ = {

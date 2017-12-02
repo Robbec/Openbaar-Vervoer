@@ -1,11 +1,18 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
-[ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=3]
-[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=4]
-[ext_resource path="res://textures/pixel.png" type="Texture" id=5]
-
+[ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/pixel.png" type="Texture" id=3]
+[ext_resource path="res://textures/level 6.png" type="Texture" id=4]
+[ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/menuSmall.png" type="Texture" id=6]
+[ext_resource path="res://scripts/buttonMainMenu.gd" type="Script" id=7]
+[ext_resource path="res://scenes/timerLabel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=9]
+[ext_resource path="res://scenes/timerLabel.gd" type="Script" id=10]
+[ext_resource path="res://textures/busgeel.png" type="Texture" id=11]
+[ext_resource path="res://textures/retrySmall.png" type="Texture" id=12]
+[ext_resource path="res://scripts/buttonRetry.gd" type="Script" id=13]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -62,37 +69,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="menuButton" parent="screen" instance=ExtResource( 2 )]
-
-margin/right = 60.9
-margin/bottom = 81.15
-
-[node name="timerLabel" type="Label" parent="screen"]
-
-anchor/right = 1
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 131.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0.00"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="busContainer" type="Node" parent="."]
 
-[node name="busPath" parent="busContainer" instance=ExtResource( 4 )]
+[node name="busPath" parent="busContainer" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 360, 1190 )
 
-[node name="busPath 2" parent="busContainer" instance=ExtResource( 4 )]
+[node name="busPath 2" parent="busContainer" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 100, 1190 )
 curve = SubResource( 1 )
@@ -147,9 +130,93 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer/obstacle"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 modulate = Color( 0.121765, 0, 0.820312, 1 )
 region = true
 region_rect = Rect2( 0, 0, 40, 40 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+
+transform/pos = Vector2( 360, 640 )
+texture = ExtResource( 4 )
+
+[node name="menu" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="menuButton" type="TextureButton" parent="menu" instance=ExtResource( 5 )]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 42.0
+margin/top = 42.0
+margin/right = 121.2
+margin/bottom = 143.7
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 6 )
+params/resize_mode = 0
+params/scale = Vector2( 0.9, 0.9 )
+params/stretch_mode = 0
+params/modulate = Color( 0.988235, 0.690196, 0.25098, 1 )
+script/script = ExtResource( 7 )
+
+[node name="timerLabel" type="Label" parent="menu" instance=ExtResource( 8 )]
+
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 30.0
+margin/top = 30.0
+margin/right = 25.0
+margin/bottom = 161.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0.00"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="menu"]
+
+transform/pos = Vector2( 358.595, 96.1694 )
+transform/scale = Vector2( 36.8595, 10.6169 )
+z/z = -1
+texture = ExtResource( 11 )
+
+[node name="TextureButton" type="TextureButton" parent="menu"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 290.0
+margin/top = 21.0
+margin/right = 392.0
+margin/bottom = 174.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 12 )
+params/resize_mode = 1
+params/stretch_mode = 1
+script/script = ExtResource( 13 )
 
 

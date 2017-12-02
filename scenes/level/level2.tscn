@@ -13,14 +13,11 @@ transform/pos = Vector2( 360, 1190 )
 
 [node name="obstaclePath" parent="obstacleContainer" instance=ExtResource( 3 )]
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" parent="."]
 
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
+editor/display_folded = true
 
-[node name="Sprite" type="Sprite" parent="Background"]
+[node name="Sprite" parent="Background"]
 
 transform/pos = Vector2( 364.162, 643.081 )
 transform/scale = Vector2( 1.79212, 1.79599 )

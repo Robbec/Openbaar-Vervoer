@@ -21,18 +21,19 @@ transform/pos = Vector2( 360, 1190 )
 
 transform/rot = 89.9404
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" parent="."]
 
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
+editor/display_folded = true
 
-[node name="Sprite" type="Sprite" parent="Background"]
+[node name="Sprite" parent="Background"]
 
 transform/pos = Vector2( 362.328, 640.081 )
 transform/scale = Vector2( 1.77289, 1.81428 )
 texture = ExtResource( 3 )
+
+[node name="Background" parent="."]
+
+layer = -1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
