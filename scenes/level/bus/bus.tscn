@@ -115,7 +115,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="busPathFollow/bus"]
 
-transform/rot = -90.9261
+transform/rot = -90.0
 transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 100, 100 )
