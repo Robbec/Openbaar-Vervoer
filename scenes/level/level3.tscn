@@ -31,10 +31,6 @@ curve = SubResource( 1 )
 transform/pos = Vector2( 7.01227, -49.8162 )
 transform/rot = 90.0779
 
-[node name="Sprite" parent="busContainer/busPath/busPathFollow/bus"]
-
-transform/rot = -90.0
-
 [node name="busPath 2" parent="busContainer" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 590, 1190 )
