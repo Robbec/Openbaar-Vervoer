@@ -1,6 +1,7 @@
 extends Area2D
 
 signal busClicked
+signal busCrashed
 
 func _ready():
 	connect("area_enter",self,"_on_area_enter")
@@ -10,9 +11,6 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed:
 		emit_signal("busClicked")
-		print("Bus is clicked.")
 
 func _on_area_enter(area):
-	sound._play_sound("carCrash")
-	HTTPLogging.add_record(0,global.currentScene,false)
-	get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
+	emit_signal("busCrashed")

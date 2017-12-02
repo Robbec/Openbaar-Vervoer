@@ -5,6 +5,7 @@ var regexp = RegEx.new()
 var level = 0
 var measuring = false
 var timer = 0
+var crashed = false
 
 func _ready():
 	get_viewport().queue_screen_capture()
@@ -21,17 +22,19 @@ func _ready():
 		totalBusses += 1
 		bus.get_node("busPathFollow/bus").connect("busClicked",self,"_on_bus_clicked")
 		bus.get_node("busPathFollow").connect("busArrived",self,"_on_bus_arrived")
+		bus.get_node("busPathFollow/bus").connect("busCrashed",self,"_on_bus_crashed")
 	set_process(true)
 	print(global.unlockedLevels)
 	
 func _on_bus_clicked():
-	print("Start measuring time.")
+	print("Bus is clicked.")
 	measuring = true
+	print("Start measuring time.")
 
 func _on_bus_arrived():
 	print("Bus has arrived.")
 	bussesArrived += 1
-	if(bussesArrived == totalBusses):
+	if (bussesArrived == totalBusses):
 		HTTPLogging.add_record(timer,level,true)
 		measuring = false
 		print("All busses have arrived.")
@@ -40,9 +43,17 @@ func _on_bus_arrived():
 		global._set_score(timer,level)
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
-	
+
+func _on_bus_crashed():
+	if (crashed == false):
+		crashed = true
+		print("Bus crashed.")
+		sound._play_sound("carCrash")
+		HTTPLogging.add_record(0,global.currentScene,false)
+		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")	
+
 func _process(delta):
-	if(measuring):
+	if (measuring):
 		timer += delta
 		get_node("menu/timerLabel").set_text(str("%.2f" % timer))
 	if (timer >= 99):

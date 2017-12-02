@@ -29,10 +29,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="busContainer" type="Node" parent="."]
-
-[node name="obstacleContainer" type="Node" parent="."]
-
 [node name="menu" type="CanvasLayer" parent="."]
 
 layer = 1
@@ -81,6 +77,10 @@ textures/normal = ExtResource( 6 )
 params/resize_mode = 1
 params/stretch_mode = 1
 script/script = ExtResource( 7 )
+
+[node name="busContainer" type="Node" parent="."]
+
+[node name="obstacleContainer" type="Node" parent="."]
 
 [node name="Background" type="CanvasLayer" parent="."]
 
