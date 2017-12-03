@@ -74,6 +74,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Background"]
 
+centered = false
 script/script = ExtResource( 6 )
 
 
