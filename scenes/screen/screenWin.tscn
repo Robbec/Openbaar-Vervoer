@@ -55,5 +55,3 @@ script/script = ExtResource( 7 )
 [node name="victorySound" type="Node" parent="."]
 
 script/script = ExtResource( 10 )
-
-
