@@ -1,5 +1,5 @@
 extends Node
-var theme = true
+var theme = false
 var localscore = 0
 var maxLevel = 9
 var level
@@ -13,6 +13,10 @@ var savegame = ConfigFile.new()
 var highscore = false
 
 func _ready():
+	var x = get_random_number()
+	print(str(x))
+	if(x == 0):
+		theme = true
 	var file = File.new()
 	starscore.load(save_path2)
 	if(!file.file_exists(save_path)):
@@ -48,3 +52,6 @@ func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
 func _get_star_value(stars,level):
 	return starscore.get_value("star"+str(stars),"level"+str(level))
+func get_random_number():
+    randomize()
+    return randi()%2
