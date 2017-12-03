@@ -5,5 +5,5 @@ extends Node
 # var b = "textvar"
 
 func _ready():
-#	sound._play_sound("win")
+	sound._play_sound("win")
 	pass
