@@ -35,6 +35,7 @@ func _on_bus_arrived():
 	print("Bus has arrived.")
 	bussesArrived += 1
 	if (bussesArrived == totalBusses):
+		var level = global.level
 		HTTPLogging.add_record(timer,level,true)
 		measuring = false
 		print("All busses have arrived.")
