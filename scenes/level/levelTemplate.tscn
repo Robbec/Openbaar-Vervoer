@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/screen/screenButtons/buttonMainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/timerLabel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono).fnt" type="BitmapFont" id=4]
 [ext_resource path="res://textures/busgeel.png" type="Texture" id=5]
-[ext_resource path="res://textures/retrySmall.png" type="Texture" id=6]
-[ext_resource path="res://scripts/buttonRetry.gd" type="Script" id=7]
-[ext_resource path="res://scripts/versionBackground.gd" type="Script" id=8]
+[ext_resource path="res://scripts/versionBackground.gd" type="Script" id=6]
 
 [node name="level" type="Node"]
 
@@ -51,32 +49,17 @@ margin/top = 30.0
 margin/right = 25.0
 margin/bottom = 161.0
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 align = 2
 
 [node name="Sprite" type="Sprite" parent="menu"]
 
+visibility/opacity = 0.75
 transform/pos = Vector2( 358.595, 96.1694 )
 transform/scale = Vector2( 36.8595, 10.6169 )
 z/z = -1
 texture = ExtResource( 5 )
-
-[node name="TextureButton" type="TextureButton" parent="menu"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 290.0
-margin/top = 21.0
-margin/right = 392.0
-margin/bottom = 174.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 6 )
-params/resize_mode = 1
-params/stretch_mode = 1
-script/script = ExtResource( 7 )
+modulate = Color( 0.208217, 0.753906, 0.161972, 1 )
 
 [node name="busContainer" type="Node" parent="."]
 
@@ -91,6 +74,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Background"]
 
-script/script = ExtResource( 8 )
+centered = false
+script/script = ExtResource( 6 )
 
 

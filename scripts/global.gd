@@ -2,7 +2,7 @@ extends Node
 var theme = true
 var localscore = 0
 var maxLevel = 9
-var currentScene
+var level
 var unlockedLevels = Array()
 var scores = Array()
 var save_data

@@ -2,7 +2,6 @@ var bussesArrived = 0
 var totalBusses = 0
 onready var filename = get_tree().get_current_scene().get_filename()
 var regexp = RegEx.new()
-var level = 0
 var measuring = false
 var timer = 0
 var crashed = false
@@ -10,21 +9,22 @@ var crashed = false
 func _ready():
 	get_viewport().queue_screen_capture()
 	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
 	var capture = get_viewport().get_screen_capture()
 	capture.save_png("res://textures/screenshot.png")
-	regexp.compile("\\level(.).tscn")
-	regexp.find(filename)
-	level = int(regexp.get_captures()[1])
-	global.currentScene = level
+	
 	for bus in get_node("busContainer").get_children():
-		print("A bus in the container.")
 		totalBusses += 1
 		bus.get_node("busPathFollow/bus").connect("busClicked",self,"_on_bus_clicked")
 		bus.get_node("busPathFollow").connect("busArrived",self,"_on_bus_arrived")
 		bus.get_node("busPathFollow/bus").connect("busCrashed",self,"_on_bus_crashed")
+	get_level()
 	set_process(true)
-	print(global.unlockedLevels)
+	
+func get_level():
+	regexp.compile("\\level(.).tscn")
+	regexp.find(filename)
+	var level = int(regexp.get_captures()[1])
+	global.level = level
 	
 func _on_bus_clicked():
 	print("Bus is clicked.")
@@ -49,7 +49,7 @@ func _on_bus_crashed():
 		crashed = true
 		print("Bus crashed.")
 		sound._play_sound("carCrash")
-		HTTPLogging.add_record(0,global.currentScene,false)
+		HTTPLogging.add_record(0,global.level,false)
 		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")	
 
 func _process(delta):
