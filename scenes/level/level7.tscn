@@ -78,7 +78,6 @@ curve = SubResource( 4 )
 
 [node name="obstaclePathFollow" type="PathFollow2D" parent="obstacleContainer/obstaclePath"]
 
-transform/pos = Vector2( 200, 193.818 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -100,7 +99,7 @@ autoplay = "horizontalCenter"
 
 [node name="obstacle" type="Area2D" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer"]
 
-transform/pos = Vector2( 254.623, 400 )
+transform/pos = Vector2( 166.136, 400 )
 input/pickable = true
 shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1.93195, 0, 0, 1.89444, 0.254036, -0.873432 )
