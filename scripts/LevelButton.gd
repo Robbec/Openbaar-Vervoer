@@ -6,7 +6,10 @@ func _ready():
 	if(global.unlockedLevels[level-1]):
 		set_disabled(false)
 	var score = global._get_score(level)
-	get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
+	if(score == 0):
+		get_node("timerLabel").set_text("-:--")
+	else:
+		get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
 
 func _pressed():
 	global.level = level
