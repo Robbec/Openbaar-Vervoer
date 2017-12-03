@@ -474,6 +474,7 @@ max_lines_visible = -1
 
 [node name="levelButton 1" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 147.0
 margin/bottom = 347.0
 custom_styles/hover = SubResource( 1 )
@@ -482,6 +483,7 @@ text = "1"
 
 [node name="levelButton 2" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 230.0
 margin/top = 147.0
 margin/right = 430.0
@@ -493,6 +495,7 @@ text = "2"
 
 [node name="levelButton 3" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 460.0
 margin/top = 147.0
 margin/right = 660.0
@@ -504,6 +507,7 @@ text = "3"
 
 [node name="levelButton 4" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 427.0
 margin/bottom = 627.0
 custom_styles/hover = SubResource( 9 )
@@ -513,6 +517,7 @@ text = "4"
 
 [node name="levelButton 5" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 230.0
 margin/top = 427.0
 margin/right = 430.0
@@ -524,6 +529,7 @@ text = "5"
 
 [node name="levelButton 6" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 460.0
 margin/top = 427.0
 margin/right = 660.0
@@ -535,6 +541,7 @@ text = "6"
 
 [node name="levelButton 7" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 707.0
 margin/bottom = 907.0
 custom_styles/hover = SubResource( 18 )
@@ -544,6 +551,7 @@ text = "7"
 
 [node name="levelButton 8" parent="screen" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 230.0
 margin/top = 707.0
 margin/right = 430.0
@@ -581,4 +589,12 @@ margin/right = 0.0
 margin/bottom = 1220.0
 
 
+[editable path="screen/levelButton 1"]
+[editable path="screen/levelButton 2"]
+[editable path="screen/levelButton 3"]
+[editable path="screen/levelButton 4"]
+[editable path="screen/levelButton 5"]
+[editable path="screen/levelButton 6"]
+[editable path="screen/levelButton 7"]
+[editable path="screen/levelButton 8"]
 [editable path="screen/levelButton 9"]

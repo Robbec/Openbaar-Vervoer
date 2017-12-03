@@ -7,11 +7,14 @@ var unlockedLevels = Array()
 var scores = Array()
 var save_data
 var save_path = "res://config file/highScore.cfg" 
+var save_path2 = "res://config file/StarScore.cfg" 
+var starscore = ConfigFile.new()
 var savegame = ConfigFile.new()
 var highscore = false
 
 func _ready():
 	var file = File.new()
+	starscore.load(save_path2)
 	if(!file.file_exists(save_path)):
 		_create_new_save_file()
 	else:
@@ -43,11 +46,14 @@ func _notification(what):
 
 func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
-	
+func _get_star_value(stars,level):
+	return starscore.get_value("star"+str(stars),"level"+str(level))
+
 func _is_new_highscore():
 	if(highscore):
 		highscore = false
 		return true
 	else:
 		return false
+
 	 
