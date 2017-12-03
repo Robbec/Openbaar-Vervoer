@@ -604,4 +604,11 @@ margin/right = 116.0
 margin/bottom = 1210.0
 textures/normal = ExtResource( 8 )
 
+[node name="TextureButton" parent="." instance=ExtResource( 7 )]
+
+margin/left = 510.0
+margin/top = 1098.0
+margin/right = 594.0
+margin/bottom = 1240.0
+
 
