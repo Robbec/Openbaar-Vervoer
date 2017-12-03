@@ -36,7 +36,7 @@ func _on_bus_arrived():
 	bussesArrived += 1
 	if (bussesArrived == totalBusses):
 		var level = global.level
-		HTTPLogging.add_record(timer,level,true)
+		HTTPLogging.add_record(timer,true)
 		measuring = false
 		print("All busses have arrived.")
 		if(level != global.maxLevel):
@@ -50,7 +50,7 @@ func _on_bus_crashed():
 		crashed = true
 		print("Bus crashed.")
 		sound._play_sound("carCrash")
-		HTTPLogging.add_record(0,global.level,false)
+		HTTPLogging.add_record(0,false)
 		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")	
 
 func _process(delta):

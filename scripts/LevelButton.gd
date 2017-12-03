@@ -21,6 +21,7 @@ func _ready():
 	get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
 		
 func _pressed():
+	global.level = level
 	get_tree().change_scene("res://scenes/level/level" + str(level) + ".tscn");
 	
 func _change_score_texture(texture):
