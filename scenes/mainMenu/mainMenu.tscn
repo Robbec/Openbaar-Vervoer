@@ -1,12 +1,13 @@
-[gd_scene load_steps=34 format=1]
+[gd_scene load_steps=35 format=1]
 
 [ext_resource path="res://scenes/mainMenu/mainMenuTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fonts/font_digital-7/godotFont/digital-75.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://fonts/font_digital-7/godotFont/digital-7 (mono 100).fnt" type="BitmapFont" id=2]
 [ext_resource path="res://scenes/mainMenu/mainMenuButtons/levelButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/grijs.jpg" type="Texture" id=4]
 [ext_resource path="res://textures/disabledlevel.jpg" type="Texture" id=5]
 [ext_resource path="res://scenes/screen/screenButtons/buttonSound.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/mainMenu/mainMenuButtons/buttonInfo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://textures/info.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -452,7 +453,7 @@ draw_center = true
 
 [node name="main" instance=ExtResource( 1 )]
 
-[node name="Levels" type="Label" parent="screen"]
+[node name="screenTitle" type="Label" parent="screen"]
 
 anchor/left = 2
 anchor/right = 2
@@ -463,7 +464,7 @@ size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 1.0
-margin/bottom = 0.0
+margin/bottom = 65.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pick a level"
@@ -472,7 +473,20 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="levelButton 1" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButtons" type="Control" parent="screen"]
+
+anchor/top = 2
+anchor/bottom = 2
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 0.0327869
+
+[node name="levelButton 1" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/top = 147.0
@@ -481,7 +495,7 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "1"
 
-[node name="levelButton 2" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 2" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/left = 230.0
@@ -493,7 +507,7 @@ custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "2"
 
-[node name="levelButton 3" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 3" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/left = 460.0
@@ -505,7 +519,7 @@ custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "3"
 
-[node name="levelButton 4" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 4" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/top = 427.0
@@ -515,7 +529,7 @@ custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 text = "4"
 
-[node name="levelButton 5" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 5" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/left = 230.0
@@ -527,7 +541,7 @@ custom_styles/disabled = SubResource( 13 )
 custom_styles/normal = SubResource( 14 )
 text = "5"
 
-[node name="levelButton 6" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 6" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/left = 460.0
@@ -539,7 +553,7 @@ custom_styles/disabled = SubResource( 16 )
 custom_styles/normal = SubResource( 17 )
 text = "6"
 
-[node name="levelButton 7" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 7" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/top = 707.0
@@ -549,7 +563,7 @@ custom_styles/disabled = SubResource( 19 )
 custom_styles/normal = SubResource( 20 )
 text = "7"
 
-[node name="levelButton 8" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 8" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 margin/left = 230.0
@@ -561,8 +575,9 @@ custom_styles/disabled = SubResource( 22 )
 custom_styles/normal = SubResource( 23 )
 text = "8"
 
-[node name="levelButton 9" parent="screen" instance=ExtResource( 3 )]
+[node name="levelButton 9" parent="screen/levelButtons" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/left = 460.0
 margin/top = 707.0
 margin/right = 660.0
@@ -579,20 +594,14 @@ anchor/bottom = 1
 margin/top = 150.0
 margin/right = 167.0
 
-[node name="TextureButton" parent="screen" instance=ExtResource( 7 )]
+[node name="Node" parent="screen" instance=ExtResource( 7 )]
 
-margin/left = 484.0
-margin/top = 1065.0
-margin/right = 568.0
-margin/bottom = 1208.0
+anchor/left = 1
+anchor/right = 1
+margin/left = 200.0
+margin/top = 1068.0
+margin/right = 116.0
+margin/bottom = 1210.0
+textures/normal = ExtResource( 8 )
 
 
-[editable path="screen/levelButton 1"]
-[editable path="screen/levelButton 2"]
-[editable path="screen/levelButton 3"]
-[editable path="screen/levelButton 4"]
-[editable path="screen/levelButton 5"]
-[editable path="screen/levelButton 6"]
-[editable path="screen/levelButton 7"]
-[editable path="screen/levelButton 8"]
-[editable path="screen/levelButton 9"]
