@@ -6,14 +6,14 @@
 [ext_resource path="res://textures/freebus.png" type="Texture" id=4]
 [ext_resource path="res://fonts/font_digital-7/godotFont/digital-25.fnt" type="BitmapFont" id=5]
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
 "points": Vector2Array( 0, 0, 0, 0, -530, -500, 0, 0, 0, 0, 540, -500 )
 }
 
-[node name="Node" type="Node"]
+[node name="screenSplash" type="Node"]
 
 [node name="title" type="Label" parent="."]
 
@@ -39,7 +39,7 @@ max_lines_visible = -1
 [node name="busPath" type="Path2D" parent="."]
 
 transform/pos = Vector2( 360, 1170 )
-curve = SubResource( 2 )
+curve = SubResource( 1 )
 script/script = ExtResource( 2 )
 
 [node name="busPathFollow" type="PathFollow2D" parent="busPath"]
@@ -84,14 +84,19 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 50.0
+margin/top = 130.0
 margin/right = 1.0
-margin/bottom = 28.0
+margin/bottom = 30.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "© 2017"
+text = "Developed by Jeroen O., Niels V.B.,
+Robbe C. & Sebastiano V.
+
+© 2017"
 align = 1
+valign = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
 
