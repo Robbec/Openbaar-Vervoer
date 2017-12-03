@@ -1,5 +1,5 @@
 extends Node
-var theme = true
+var theme = false
 var localscore = 0
 var maxLevel = 9
 var level
