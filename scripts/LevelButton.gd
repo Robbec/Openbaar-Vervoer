@@ -23,6 +23,7 @@ func _ready():
 func _pressed():
 	global.level = level
 	get_tree().change_scene("res://scenes/level/level" + str(level) + ".tscn");
+	global.level = level
 	
 func _change_score_texture(texture):
 		get_stylebox("normal","").set_texture(texture)

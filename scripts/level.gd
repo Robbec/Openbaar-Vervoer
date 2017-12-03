@@ -7,10 +7,6 @@ var timer = 0
 var crashed = false
 
 func _ready():
-	get_viewport().queue_screen_capture()
-	yield(get_tree(), "idle_frame")
-	var capture = get_viewport().get_screen_capture()
-	capture.save_png("res://textures/screenshot.png")
 	
 	for bus in get_node("busContainer").get_children():
 		totalBusses += 1
@@ -24,6 +20,7 @@ func get_level():
 	regexp.compile("\\level(.).tscn")
 	regexp.find(filename)
 	var level = int(regexp.get_captures()[1])
+	print(level)
 	global.level = level
 	
 func _on_bus_clicked():
@@ -39,9 +36,9 @@ func _on_bus_arrived():
 		HTTPLogging.add_record(timer,true)
 		measuring = false
 		print("All busses have arrived.")
-		if(level != global.maxLevel):
-			global.unlockedLevels[level] = true
-		global._set_score(timer,level)
+		if(global.level != global.maxLevel):
+			global.unlockedLevels[global.level] = true
+		global._set_score(timer,global.level)
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 
