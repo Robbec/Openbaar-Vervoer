@@ -47,8 +47,10 @@ func _notification(what):
 
 func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
+	
 func _get_star_value(stars,level):
 	return starscore.get_value("star"+str(stars),"level"+str(level))
+	
 func get_random_number():
     randomize()
-    return randi()%2
+    return randi() % 2
