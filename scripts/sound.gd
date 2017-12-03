@@ -4,7 +4,7 @@ var player = SamplePlayer.new()
 var sampleCarCrash = preload("res://sounds/carCrash.smp")
 var sampleBusStarting = preload("res://sounds/busStarting.smp")
 var sampleBusDriving = preload("res://sounds/busDriving.smp")
-var sampleSuccess = preload("res://sounds/applause.wav")
+var sampleSuccess = preload("res://sounds/busHorn.smp")
 var music = true
 var library = SampleLibrary.new()
 
