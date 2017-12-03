@@ -1,5 +1,5 @@
 extends Label
 
 func _ready():
-	if(global._is_new_highscore()):
+	if(global.highscore):
 		set_text("NEW HIGHSCORE!")

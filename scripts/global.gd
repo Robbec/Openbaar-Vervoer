@@ -48,12 +48,3 @@ func _get_score(level):
 	return savegame.get_value("level","Level" + str(level) + "_Score")
 func _get_star_value(stars,level):
 	return starscore.get_value("star"+str(stars),"level"+str(level))
-
-func _is_new_highscore():
-	if(highscore):
-		highscore = false
-		return true
-	else:
-		return false
-
-	 
