@@ -13,10 +13,6 @@ var savegame = ConfigFile.new()
 var highscore = false
 
 func _ready():
-	var x = get_random_number()
-	print(str(x))
-	if(x == 0):
-		theme = true
 	var file = File.new()
 	starscore.load(save_path2)
 	if(!file.file_exists(save_path)):
@@ -24,7 +20,7 @@ func _ready():
 	else:
 		savegame.load(save_path)
 	var j = savegame.get_value("info","unlockedLevels")
-	
+	theme = savegame.get_value("info","theme")
 	for i in range(j):
 		unlockedLevels.append(true)
 	for i in range(9-j):
@@ -38,6 +34,7 @@ func _set_score(value,index):
 
 func _create_new_save_file():
 	savegame.set_value("info","unlockedLevels", 1)
+	savegame.set_value("info","theme", get_random_number() == 0)
 	for i in range(9):
 		savegame.set_value("level","Level" + str(i+1) + "_Score", 0)
 	savegame.save(save_path)
