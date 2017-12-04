@@ -7,9 +7,7 @@ var level
 var unlockedLevels
 var scores = Array()
 var save_data
-var save_path = "user://highScore.dat" 
-var starscore = File.new()
-var savegame = File.new()
+var save_path = "user://highScore.dat"
 var _user_data = {}
 var highscore = false
 var _starscore_data = {}
