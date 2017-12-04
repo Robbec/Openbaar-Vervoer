@@ -12,18 +12,13 @@ var savegame = File.new()
 var _user_data = {}
 var highscore = false
 var _starscore_data = {}
+var star2scores = [5,5,5,4,4,5,6,5,6]
+var star3scores = [4,4,4,3,3,4,4,4,5]
 
 func _ready():
 	for i in range(9):
-	 	_starscore_data["level" + str(i+1) + "_star2"] = 5
-	 	_starscore_data["level" + str(i+1) + "_star3"] = 4
-	_starscore_data["level" + str(4) + "_star2"] = 4
-	_starscore_data["level" + str(5) + "_star2"] = 4
-	_starscore_data["level" + str(7) + "_star2"] = 6
-	_starscore_data["level" + str(9) + "_star2"] = 6
-	_starscore_data["level" + str(4) + "_star3"] = 3
-	_starscore_data["level" + str(5) + "_star3"] = 3
-	_starscore_data["level" + str(9) + "_star3"] = 5
+	 	_starscore_data["level" + str(i+1) + "_star2"] = star2scores[i]
+	 	_starscore_data["level" + str(i+1) + "_star3"] = star3scores[i]
 	load_data(save_path,_user_data)
 
 	print(_user_data.keys().size())
