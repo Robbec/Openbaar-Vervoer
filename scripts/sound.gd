@@ -5,9 +5,9 @@ var sampleCarCrash = preload("res://sounds/carCrash.smp")
 var sampleBusStarting = preload("res://sounds/busStarting.smp")
 var sampleBusDriving = preload("res://sounds/busDriving.smp")
 var sampleSuccess = preload("res://sounds/busHorn.smp")
-var sampleNoThemeSucces = preload("res://sounds/196106__aiwha__ding.wav")
-var sampleNoThemeMoving = preload("res://sounds/158922__carlmartin__jembay-hit-1-hi-rim.wav")
-var sampleNoThemeCrash = preload("res://sounds/hit.wav")
+var sampleNoThemeSucces = preload("res://sounds/196106__aiwha__ding2.smp")
+var sampleNoThemeMoving = preload("res://sounds/158922__carlmartin__jembay-hit-1-hi-rim.smp")
+var sampleNoThemeCrash = preload("res://sounds/hit2.smp")
 var music = true
 var library = SampleLibrary.new()
 
