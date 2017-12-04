@@ -48,6 +48,10 @@ curve = SubResource( 3 )
 anims/verticalLeftDown = ExtResource( 4 )
 autoplay = "verticalLeftDown"
 
+[node name="obstacle" parent="obstacleContainer/obstaclePath/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 220, 1100 )
+
 [node name="obstaclePath 2" parent="obstacleContainer" instance=ExtResource( 3 )]
 
 curve = SubResource( 3 )
@@ -56,6 +60,10 @@ curve = SubResource( 3 )
 
 anims/verticalRightDown = ExtResource( 5 )
 autoplay = "verticalRightDown"
+
+[node name="obstacle" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow/AnimationPlayer"]
+
+transform/pos = Vector2( 335, 200 )
 
 
 [editable path="obstacleContainer/obstaclePath"]
