@@ -27,7 +27,7 @@ margin/right = 1.0
 margin/bottom = 699.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "We developed this game for the course 'Fundamentals of Men-Machine Interaction' at KU Leuven. While you are playing the game, we record some basic metrics in order to analyse how well you interact with the game controls. We only track
+text = "We developed this game for the course 'Fundamentals of Man-Machine Interaction' at KU Leuven. While you are playing the game, we record some basic metrics in order to analyse how well you interact with the game controls. We only track
 
  - Success or failure
  - Time needed to complete a level
