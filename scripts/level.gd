@@ -3,6 +3,7 @@ var totalBusses = 0
 var measuring = false
 var timer = 0
 var crashed = false
+var startTimer = 0
 
 func _ready():
 	for bus in get_node("busContainer").get_children():
@@ -27,7 +28,7 @@ func _on_bus_arrived():
 		global._set_score(timer,global.level)
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
-		HTTPLogging.add_record(timer,true)
+		HTTPLogging.add_record(timer,true,startTimer)
 
 func _on_bus_crashed():
 	if (crashed == false):
@@ -37,12 +38,15 @@ func _on_bus_crashed():
 			sound._play_sound("carCrash")
 		else:
 			sound._play_sound("noThemeCrash")
-		HTTPLogging.add_record(0,false)
+		HTTPLogging.add_record(timer,false,startTimer)
 		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
 
 func _process(delta):
+	if (!measuring && timer == 0):
+		startTimer += delta
 	if (measuring):
 		timer += delta
 		get_node("menu/timerLabel").set_text(str("%.2f" % timer).replace(".",":"))
 	if (timer >= 99):
+		HTTPLogging.add_record(timer,false,startTimer)
 		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")

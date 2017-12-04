@@ -1,9 +1,9 @@
 extends Node2D
  
-func add_record(time,won):
-	add_record_full(time,global.level,won,global.theme) 
+func add_record(time,won,startTime):
+	add_record_full(time,global.level,won,global.theme, startTime) 
 
-func add_record_full(time, level, won, theme):
+func add_record_full(time, level, won, theme, startTime):
  
     var err=0
     var http = HTTPClient.new() # Create the Client
@@ -27,7 +27,7 @@ func add_record_full(time, level, won, theme):
     ]
 
     var id = OS.get_name() + "-" + OS.get_unique_ID()
-    err = http.request(HTTPClient.METHOD_GET,"/MMI/logUserData.php?user="+id+"&level="+str(level)+"&time="+str(time)+"&won="+str(won)+"&theme="+str(theme)+"&control=OpenbaarVervoer",headers) # Request a page from the site (this one was chunked..)
+    err = http.request(HTTPClient.METHOD_GET,"/MMI/logUserData.php?user="+id+"&level="+str(level)+"&time="+str(time)+"&startTime="+str(startTime)+"&won="+str(won)+"&theme="+str(theme)+"&control=OpenbaarVervoer",headers) # Request a page from the site (this one was chunked..)
  
     if( err != OK ): # Make sure all is OK
     	return
