@@ -33,7 +33,10 @@ func _on_bus_crashed():
 	if (crashed == false):
 		crashed = true
 		print("Bus crashed.")
-		sound._play_sound("carCrash")
+		if global.theme:
+			sound._play_sound("carCrash")
+		else:
+			sound._play_sound("noThemeCrash")
 		HTTPLogging.add_record(0,false)
 		get_tree().change_scene("res://scenes/screen/screenGameOver.tscn")
 

@@ -7,7 +7,10 @@ onready var star2 = global._get_star_value(2,global.level)
 onready var star3 = global._get_star_value(3,global.level)
 
 func _ready():
-	sound._play_sound("win")
+	if global.theme:
+		sound._play_sound("win")
+	else:
+		sound._play_sound("noThemeWin")
 	if(global.localscore < star3):
 		set_texture(gold)
 	elif(global.localscore < star2):

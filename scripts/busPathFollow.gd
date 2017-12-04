@@ -12,7 +12,10 @@ func _ready():
 func _on_bus_clicked():
 	get_node("bus/AnimationPlayer").stop();
 	get_node("bus/Sprite").set_rotd(-90);
-	sound._play_sound("busDriving")
+	if global.theme:
+		sound._play_sound("busDriving")
+	else:
+		sound._play_sound("noThemeMoving")
 	moving = true
 	print("Bus starts moving.")
 	
