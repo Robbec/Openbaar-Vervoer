@@ -85,8 +85,8 @@ autoplay = "buttonNext"
 [node name="buttonNext" parent="screen/AnimationPlayer" instance=ExtResource( 9 )]
 
 margin/left = 490.0
-margin/top = 1120.0
+margin/top = 1088.0
 margin/right = 1096.0
-margin/bottom = 1498.0
+margin/bottom = 1466.0
 
 
