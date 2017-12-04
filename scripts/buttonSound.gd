@@ -4,6 +4,7 @@ var soundOn = preload("res://textures/audioOnSmall.png")
 var mute = !sound.music
 
 func _ready():
+	
 	if(mute):
 		set_normal_texture(soundOff)
 	else:

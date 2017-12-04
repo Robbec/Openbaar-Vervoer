@@ -5,6 +5,7 @@ var colors = [Color(.5,.5,.5),Color("FED500"),Color("7404A9"),Color("0A35AB")]
 var colorIndex = 0
 
 func _ready():
+	
 	var children = get_parent().get_children()
 	for i in range(children.size()):
 		if children[i] == self:
