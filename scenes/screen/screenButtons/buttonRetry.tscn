@@ -3,19 +3,17 @@
 [ext_resource path="res://textures/retrySmall.png" type="Texture" id=1]
 [ext_resource path="res://scripts/buttonRetry.gd" type="Script" id=2]
 
-[node name="Node" type="Node"]
-
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="buttonRetry" type="TextureButton"]
 
 rect/scale = Vector2( 0.3, 0.3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 80.0
-margin/top = 1000.0
-margin/right = 566.0
-margin/bottom = 1594.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
