@@ -1,27 +1,25 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://textures/next_orange.png" type="Texture" id=1]
-[ext_resource path="res://textures/next_gray.png" type="Texture" id=2]
+[ext_resource path="res://textures/next-orange-small.png" type="Texture" id=1]
+[ext_resource path="res://textures/next-gray-small.png" type="Texture" id=2]
 [ext_resource path="res://scripts/buttonNext.gd" type="Script" id=3]
 
 [node name="buttonNext" type="TextureButton"]
 
-rect/scale = Vector2( 0.3, 0.3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
+margin/right = 165.0
+margin/bottom = 100.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 1 )
 textures/pressed = ExtResource( 2 )
 params/resize_mode = 0
-params/scale = Vector2( 3, 3 )
 params/stretch_mode = 0
 script/script = ExtResource( 3 )
 
