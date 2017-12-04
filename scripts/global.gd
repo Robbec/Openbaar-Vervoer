@@ -6,8 +6,7 @@ var level
 var unlockedLevels = Array()
 var scores = Array()
 var save_data
-var save_path = "res://config file/highScore.dat" 
-var save_path2 = "res://config file/StarScore.dat" 
+var save_path = "user://highScore.dat" 
 var starscore = File.new()
 var savegame = File.new()
 var _user_data = {}
@@ -15,12 +14,16 @@ var highscore = false
 var _starscore_data = {}
 
 func _ready():
-#	for i in range(9):
-#	 	_starscore_data["level" + str(i+1) + "_star1"] = 6
-#	 	_starscore_data["level" + str(i+1) + "_star2"] = 5
-#	 	_starscore_data["level" + str(i+1) + "_star3"] = 4
-#	save_data(save_path2,_starscore_data)
-	load_data(save_path2,_starscore_data)
+	for i in range(9):
+	 	_starscore_data["level" + str(i+1) + "_star2"] = 5
+	 	_starscore_data["level" + str(i+1) + "_star3"] = 4
+	_starscore_data["level" + str(4) + "_star2"] = 4
+	_starscore_data["level" + str(5) + "_star2"] = 4
+	_starscore_data["level" + str(7) + "_star2"] = 6
+	_starscore_data["level" + str(9) + "_star2"] = 6
+	_starscore_data["level" + str(4) + "_star3"] = 3
+	_starscore_data["level" + str(5) + "_star3"] = 3
+	_starscore_data["level" + str(9) + "_star3"] = 5
 	load_data(save_path,_user_data)
 
 	print(_user_data.keys().size())
