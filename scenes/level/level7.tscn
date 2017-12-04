@@ -64,7 +64,7 @@ autoplay = "horizontalTopLeft"
 
 [node name="obstacle" parent="obstacleContainer/obstaclePath 2/obstaclePathFollow/AnimationPlayer"]
 
-transform/pos = Vector2( 294.828, 400 )
+transform/pos = Vector2( 50, 400 )
 
 
 [editable path="obstacleContainer/obstaclePath"]
