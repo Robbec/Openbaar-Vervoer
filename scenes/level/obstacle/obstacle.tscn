@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://textures/pixel.png" type="Texture" id=1]
+[ext_resource path="res://scripts/obstacle.gd" type="Script" id=2]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -82,5 +83,6 @@ texture = ExtResource( 1 )
 modulate = Color( 0.121765, 0, 0.820312, 1 )
 region = true
 region_rect = Rect2( 0, 0, 40, 40 )
+script/script = ExtResource( 2 )
 
 
