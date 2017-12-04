@@ -1,7 +1,7 @@
 extends Path2D
 
 var points
-var colors = [Color(.5,.5,.5),Color("FED500"),Color("7404A9"),Color("0A35AB")]
+var colors = [Color(.5,.5,.5),Color("fcbb00"),Color("f32c08")]
 var colorIndex = 0
 
 func _ready():
