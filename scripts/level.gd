@@ -4,6 +4,7 @@ var measuring = false
 var timer = 0
 var crashed = false
 var startTimer = 0
+var level = global.level
 
 func _ready():
 	for bus in get_node("busContainer").get_children():
@@ -23,9 +24,9 @@ func _on_bus_arrived():
 	if (bussesArrived == totalBusses):
 		measuring = false
 		print("All busses have arrived.")
-		if(global.level != global.maxLevel):
-			global.unlockedLevels[global.level] = true
-		global._set_score(timer,global.level)
+		if(level == global.unlockedLevels && level != global.maxLevel):
+			global.unlockedLevels += 1
+		global._set_score(timer,level)
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
 		HTTPLogging.add_record(timer,true,startTimer)

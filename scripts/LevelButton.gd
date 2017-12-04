@@ -3,7 +3,7 @@ extends Button
 onready var level = int(get_text())
 
 func _ready():
-	if(global.unlockedLevels[level-1]):
+	if(level <= global.unlockedLevels):
 		set_disabled(false)
 	var score = global._get_score(level)
 	if(score == 0):

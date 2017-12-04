@@ -1,9 +1,10 @@
 extends Node
-var theme = false
+
+var theme
 var localscore = 0
 var maxLevel = 9
 var level
-var unlockedLevels = Array()
+var unlockedLevels
 var scores = Array()
 var save_data
 var save_path = "user://highScore.dat" 
@@ -20,14 +21,8 @@ func _ready():
 	 	_starscore_data["level" + str(i+1) + "_star2"] = star2scores[i]
 	 	_starscore_data["level" + str(i+1) + "_star3"] = star3scores[i]
 	load_data(save_path,_user_data)
-
-	print(_user_data.keys().size())
-	var j = _user_data["unlockedLevels"]
 	theme = _user_data["theme"]
-	for i in range(j):
-		unlockedLevels.append(true)
-	for i in range(9-j):
-		unlockedLevels.append(false)
+	unlockedLevels = _user_data["unlockedLevels"]
 
 func _set_score(value,index):
 	var score = _user_data["Level" + str(index) + "_Score"]
@@ -37,18 +32,14 @@ func _set_score(value,index):
 
 func _make_default_data():
 	_user_data["unlockedLevels"] = 1
-	_user_data["theme"] = (get_random_number() == 0)
+	_user_data["theme"] = use_theme()
 	for i in range(9):
 		_user_data["Level" + str(i+1) + "_Score"] = 0
-#	savegame.set_value("info","unlockedLevels", 1)
-#	savegame.set_value("info","theme", get_random_number() == 0)
-#	for i in range(9):
-#		savegame.set_value("level","Level" + str(i+1) + "_Score", 0)
 	return _user_data
 	
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		_user_data["unlockedLevels"] = unlockedLevels.count(true)
+		_user_data["unlockedLevels"] = unlockedLevels
 		save_data(save_path,_user_data)
 
 func _get_score(level):
@@ -57,9 +48,9 @@ func _get_score(level):
 func _get_star_value(stars,level):
 	return _starscore_data["level" + str(level) + "_star"  + str(stars)]
 	
-func get_random_number():
+func use_theme():
     randomize()
-    return randi() % 2
+    return randi() % 2 == 0
 
 func save_data(path,data):
     var f = File.new()
