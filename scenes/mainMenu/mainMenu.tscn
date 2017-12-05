@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/mainMenu/mainMenuButtons/buttonSound.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/mainMenu/mainMenuButtons/buttonInfo.tscn" type="PackedScene" id=7]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=1]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -25,7 +25,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -59,7 +59,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -76,13 +76,47 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=5]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 texture = ExtResource( 4 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 4 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -116,7 +150,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -133,7 +167,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -167,7 +201,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -184,7 +218,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -218,7 +252,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -235,7 +269,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -269,7 +303,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -286,7 +320,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -320,7 +354,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -337,7 +371,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -371,7 +405,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -388,40 +422,6 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 4 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=26]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 4 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=27]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
 texture = ExtResource( 5 )
 margin/left = 0.0
 margin/right = 0.0
@@ -433,7 +433,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=28]
+[sub_resource type="StyleBoxTexture" id=26]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -491,8 +491,8 @@ margin/bottom = 0.0614754
 editor/display_folded = true
 margin/top = 140.0
 margin/bottom = 340.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
 text = "1"
 
 [node name="levelButton 2" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -503,8 +503,8 @@ margin/top = 140.0
 margin/right = 430.0
 margin/bottom = 340.0
 custom_styles/hover = SubResource( 3 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 text = "2"
 
 [node name="levelButton 3" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -514,9 +514,9 @@ margin/left = 460.0
 margin/top = 140.0
 margin/right = 660.0
 margin/bottom = 340.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 text = "3"
 
 [node name="levelButton 4" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -524,9 +524,9 @@ text = "3"
 editor/display_folded = true
 margin/top = 420.0
 margin/bottom = 620.0
-custom_styles/hover = SubResource( 11 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
 text = "4"
 
 [node name="levelButton 5" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -536,9 +536,9 @@ margin/left = 230.0
 margin/top = 420.0
 margin/right = 430.0
 margin/bottom = 620.0
-custom_styles/hover = SubResource( 14 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 16 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 text = "5"
 
 [node name="levelButton 6" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -548,9 +548,9 @@ margin/left = 460.0
 margin/top = 420.0
 margin/right = 660.0
 margin/bottom = 620.0
-custom_styles/hover = SubResource( 17 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 text = "6"
 
 [node name="levelButton 7" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -558,9 +558,9 @@ text = "6"
 editor/display_folded = true
 margin/top = 700.0
 margin/bottom = 900.0
-custom_styles/hover = SubResource( 20 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 22 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 text = "7"
 
 [node name="levelButton 8" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -570,9 +570,9 @@ margin/left = 230.0
 margin/top = 700.0
 margin/right = 430.0
 margin/bottom = 900.0
-custom_styles/hover = SubResource( 23 )
-custom_styles/disabled = SubResource( 24 )
-custom_styles/normal = SubResource( 25 )
+custom_styles/hover = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
 text = "8"
 
 [node name="levelButton 9" parent="screen/levelButtons" instance=ExtResource( 3 )]
@@ -582,9 +582,9 @@ margin/left = 460.0
 margin/top = 700.0
 margin/right = 660.0
 margin/bottom = 900.0
-custom_styles/hover = SubResource( 26 )
-custom_styles/disabled = SubResource( 27 )
-custom_styles/normal = SubResource( 28 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/disabled = SubResource( 25 )
+custom_styles/normal = SubResource( 26 )
 text = "9"
 
 [node name="buttonSound 2" parent="screen" instance=ExtResource( 6 )]
