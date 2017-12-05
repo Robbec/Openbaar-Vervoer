@@ -19,7 +19,6 @@ shortcut = null
 textures/normal = ExtResource( 1 )
 params/resize_mode = 0
 params/stretch_mode = 0
-params/modulate = Color( 0.984314, 0.686275, 0.247059, 1 )
 script/script = ExtResource( 2 )
 
 
