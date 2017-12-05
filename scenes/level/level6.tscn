@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scenes/level/levelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/level/bus/bus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/pixel.png" type="Texture" id=3]
+[ext_resource path="res://scripts/obstacle.gd" type="Script" id=4]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -60,7 +61,6 @@ curve = SubResource( 2 )
 
 [node name="obstaclePath" type="Path2D" parent="obstacleContainer"]
 
-editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="obstaclePathFollow" type="PathFollow2D" parent="obstacleContainer/obstaclePath"]
@@ -110,5 +110,6 @@ texture = ExtResource( 3 )
 modulate = Color( 0.121765, 0, 0.820312, 1 )
 region = true
 region_rect = Rect2( 0, 0, 40, 40 )
+script/script = ExtResource( 4 )
 
 

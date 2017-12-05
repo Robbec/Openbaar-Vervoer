@@ -1,6 +1,5 @@
 extends Path2D
 
-var points
 var colors = [Color(.5,.5,.5),Color("fcbb00"),Color("f32c08"),Color("fcbb00")]
 var colorIndex = 0
 
@@ -12,7 +11,7 @@ func _ready():
 
 func _draw():
 	get_curve().set_bake_interval(50)
-	points = get_curve().get_baked_points()
+	var points = get_curve().get_baked_points()
 	points.remove(points.size()-1)
 	for v in points:
 		draw_circle(v,5,colors[colorIndex])
