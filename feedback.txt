@@ -3,3 +3,16 @@ Feedback:
 - Nick Schouten: Audio uit/aan slaat niet op bij herstarten spel. Te minimalistische obstakels (thema versie).
 - Wout Vekemans: I don't like the fact that the blocks are shaking when they are waiting to start. I liked it though.
 -Teddy Etoeharnowo: Twee vingers tegelijkertijd werkt niet?
+-Jo-Thijs Daelman (game developer): 
+	1. Ik moest soms meerdere keren proberen op een truck te tikken vooraleer die truck geactiveerd werd.
+Dit komt mogelijks doordat mijn vingers te dik zijn of mijn scherm te klein is om precies te tikken, waardoor ik er eigenlijk naast klik.
+Of het komt doordat ik niet hard genoeg tik.
+Aangezien de bussen altijd redelijk ver van elkaar staan, zou het misschien handig zijn om het gebied waar de gebruiker kan tikken te vergroten,
+voor mocht het toch het eerste probleem zijn.
+	2. Het is zo kort en hoewel het een zekere herspeelbaarheid heeft, is het niet geweldig groot.
+Uiteraard is dit een school project, hebben jullie het druk en is het niet de bedoeling een groot spel te maken,
+maar dat zou anders het eerste punt zijn om naar te kijken.
+	3. Ik denk niet dat de meeste mensen instinctief de infoknop zouden indrukken, maar ik denk wel dat een boel mensen het niet zouden appreciëren als ze achteraf ontdekken dat er info achter hun rug is doorgestuurd geweest,
+ook al is de info zo onschuldig.
+Het zou misschien beter zijn om de infoknop de eerste keer heel opvallend te maken (door te wiebelen bijvoorbeeld).
+ 
