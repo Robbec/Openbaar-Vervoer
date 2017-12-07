@@ -20,4 +20,7 @@ maar dat zou anders het eerste punt zijn om naar te kijken.
 	3. Ik denk niet dat de meeste mensen instinctief de infoknop zouden indrukken, maar ik denk wel dat een boel mensen het niet zouden appreciëren als ze achteraf ontdekken dat er info achter hun rug is doorgestuurd geweest,
 ook al is de info zo onschuldig.
 Het zou misschien beter zijn om de infoknop de eerste keer heel opvallend te maken (door te wiebelen bijvoorbeeld).
- 
+Anika Geuns:
+	1. Levels terug locked na afsluiten app.
+Hanne Esselen:
+	1. Levels terug locked na afsluiten app.
