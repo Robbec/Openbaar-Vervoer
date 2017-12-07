@@ -2,3 +2,4 @@ Feedback:
 
 - Nick Schouten: Audio uit/aan slaat niet op bij herstarten spel. Te minimalistische obstakels (thema versie).
 - Wout Vekemans: I don't like the fact that the blocks are shaking when they are waiting to start. I liked it though.
+-Teddy Etoeharnowo: Twee vingers tegelijkertijd werkt niet?
