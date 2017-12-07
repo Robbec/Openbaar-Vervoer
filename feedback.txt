@@ -1,8 +1,13 @@
 Feedback:
 
-- Nick Schouten: Audio uit/aan slaat niet op bij herstarten spel. Te minimalistische obstakels (thema versie).
-- Wout Vekemans: I don't like the fact that the blocks are shaking when they are waiting to start. I liked it though.
--Teddy Etoeharnowo: Twee vingers tegelijkertijd werkt niet?
+- Nick Schouten: 
+	1. Audio uit/aan slaat niet op bij herstarten spel. 
+	2. Te minimalistische obstakels (thema versie).
+- Wout Vekemans: 
+	1. I don't like the fact that the blocks are shaking when they are waiting to start. I liked it though.
+-Teddy Etoeharnowo: 
+	1. Twee vingers tegelijkertijd werkt niet?
+	2. Tijden op winscherm komen niet perfect overeen met timer
 -Jo-Thijs Daelman (game developer): 
 	1. Ik moest soms meerdere keren proberen op een truck te tikken vooraleer die truck geactiveerd werd.
 Dit komt mogelijks doordat mijn vingers te dik zijn of mijn scherm te klein is om precies te tikken, waardoor ik er eigenlijk naast klik.
