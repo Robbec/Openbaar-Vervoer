@@ -10,6 +10,7 @@ func _ready():
 		get_node("timerLabel").set_text("-:--")
 	else:
 		get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
+		set_disabled(false)
 
 func _pressed():
 	global.level = level
