@@ -24,8 +24,6 @@ func _on_bus_arrived():
 	if (bussesArrived == totalBusses):
 		measuring = false
 		print("All busses have arrived.")
-		if(level == global.unlockedLevels && level != global.maxLevel):
-			global.unlockedLevels += 1
 		global._set_score(timer,level)
 		global.localscore = timer
 		get_tree().change_scene("res://scenes/screen/screenWin.tscn")
