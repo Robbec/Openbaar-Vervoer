@@ -26,3 +26,6 @@ Hanne Esselen:
 	1. Levels terug locked na afsluiten app.
 Gilles Bekkers:
 	1. Levels terug locked na afsluiten app.
+Jesse De Vroede:
+	1. Levels terug locked na afsluiten app, bij Jasper niet.
+	2. Bussen botsen in bocht, kan je heel slecht inschatten.
