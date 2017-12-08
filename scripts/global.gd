@@ -59,15 +59,32 @@ func save_data(path,data):
     f.close()
 
 func load_data(path,loaded_data):
-    var f = File.new()
-    if(not f.file_exists(path)):
-        save_data(path,_make_default_data())
-    f.open(path, File.READ)
-    var data = {}
-    data.parse_json(f.get_as_text())
-    _parse_loaded_data(loaded_data,data)
-    f.close()
+	var f = File.new()
+	if(not f.file_exists(path)):
+	    save_data(path,_make_default_data())
+	f.open(path, File.READ)
+	var data = {}
+	data.parse_json(f.get_as_text())
+	_parse_loaded_data(loaded_data,data)
+	_check_correctness_data()
+	f.close()
 
 func _parse_loaded_data(loaded_data,data):
     for key in data.keys():
         loaded_data[key] = data[key]
+
+func _check_correctness_data():
+	var j = 0
+	while(_get_score(j+1) != 0 && j < 9):
+		j = j + 1
+	if(j != _user_data["unlockedLevels"]):
+		if(_user_data["unlockedLevels"] == 1 && j == 0):
+			return
+		elif(j!=9):
+			j = j + 1
+			_user_data["unlockedLevels"] = j
+		else:
+			_user_data["unlockedLevels"] = j
+	
+	
+	
