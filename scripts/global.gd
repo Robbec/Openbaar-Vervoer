@@ -26,6 +26,7 @@ func _set_score(value,index):
 	var score = _user_data["Level" + str(index) + "_Score"]
 	if(score == 0 || score > value):
 		_user_data["Level" + str(index) + "_Score"] = value
+		_user_data["unlockedLevels"] = unlockedLevels
 		highscore = true
 	save_data(save_path,_user_data)
 
