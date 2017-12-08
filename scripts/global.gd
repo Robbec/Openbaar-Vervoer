@@ -4,7 +4,6 @@ var theme
 var localscore = 0
 var maxLevel = 9
 var level
-var unlockedLevels
 var scores = Array()
 var save_data
 var save_path = "user://highScore.dat"
@@ -20,18 +19,15 @@ func _ready():
 	 	_starscore_data["level" + str(i+1) + "_star3"] = star3scores[i]
 	load_data(save_path,_user_data)
 	theme = _user_data["theme"]
-	unlockedLevels = _user_data["unlockedLevels"]
 
 func _set_score(value,index):
 	var score = _user_data["Level" + str(index) + "_Score"]
 	if(score == 0 || score > value):
 		_user_data["Level" + str(index) + "_Score"] = value
-		_user_data["unlockedLevels"] = unlockedLevels
 		highscore = true
 	save_data(save_path,_user_data)
 
 func _make_default_data():
-	_user_data["unlockedLevels"] = 1
 	_user_data["theme"] = use_theme()
 	for i in range(9):
 		_user_data["Level" + str(i+1) + "_Score"] = 0
@@ -39,7 +35,6 @@ func _make_default_data():
 	
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		_user_data["unlockedLevels"] = unlockedLevels
 		save_data(save_path,_user_data)
 
 func _get_score(level):

@@ -3,13 +3,14 @@ extends Button
 onready var level = int(get_text())
 
 func _ready():
-	if(level <= global.unlockedLevels):
-		set_disabled(false)
 	var score = global._get_score(level)
-	if(score == 0):
+	if (level == 1 || score == 0 && level != 1 && global._get_score(level - 1) != 0):
+		set_disabled(false)
+	elif (score == 0):
 		get_node("timerLabel").set_text("-:--")
 	else:
 		get_node("timerLabel").set_text(str("%.2f" % score).replace(".",":"))
+		set_disabled(false)
 
 func _pressed():
 	global.level = level
