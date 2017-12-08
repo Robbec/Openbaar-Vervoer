@@ -5,6 +5,8 @@ func add_record(time,won,startTime):
 
 func add_record_full(time, level, won, theme, startTime):
  
+    var version = "1.1"
+
     var err=0
     var http = HTTPClient.new() # Create the Client
  
@@ -27,7 +29,7 @@ func add_record_full(time, level, won, theme, startTime):
     ]
 
     var id = OS.get_name() + "-" + OS.get_unique_ID()
-    err = http.request(HTTPClient.METHOD_GET,"/MMI/logUserData.php?user="+id+"&level="+str(level)+"&time="+str(time)+"&startTime="+str(startTime)+"&won="+str(won)+"&theme="+str(theme)+"&control=OpenbaarVervoer",headers) # Request a page from the site (this one was chunked..)
+    err = http.request(HTTPClient.METHOD_GET,"/MMI/logUserData.php?user="+id+"&level="+str(level)+"&time="+str(time)+"&startTime="+str(startTime)+"&won="+str(won)+"&theme="+str(theme)+"&version="+version+"&control=OpenbaarVervoer",headers) # Request a page from the site (this one was chunked..)
  
     if( err != OK ): # Make sure all is OK
     	return
