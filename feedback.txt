@@ -24,3 +24,5 @@ Anika Geuns:
 	1. Levels terug locked na afsluiten app.
 Hanne Esselen:
 	1. Levels terug locked na afsluiten app.
+Gilles Bekkers:
+	1. Levels terug locked na afsluiten app.
