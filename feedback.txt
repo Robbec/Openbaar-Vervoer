@@ -4,7 +4,8 @@ Feedback:
 	1. Audio uit/aan slaat niet op bij herstarten spel. 
 	2. Te minimalistische obstakels (thema versie).
 - Wout Vekemans: 
-	1. I don't like the fact that the blocks are shaking when they are waiting to start. I liked it though.
+	1. I don't like the fact that the blocks are shaking when they are waiting to start. 
+	2. Extra levels.
 -Teddy Etoeharnowo: 
 	1. Twee vingers tegelijkertijd werkt niet?
 	2. Tijden op winscherm komen niet perfect overeen met timer
@@ -26,6 +27,12 @@ Hanne Esselen:
 	1. Levels terug locked na afsluiten app.
 Gilles Bekkers:
 	1. Levels terug locked na afsluiten app.
+	2. Extra levels.
 Jesse De Vroede:
 	1. Levels terug locked na afsluiten app, bij Jasper niet.
 	2. Bussen botsen in bocht, kan je heel slecht inschatten.
+	3. Extra levels.
+Jasper Bylemans:
+	1. Extra levels.
+Emiel Van Ham:
+	1. Extra levels.
