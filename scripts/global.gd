@@ -76,8 +76,10 @@ func _parse_loaded_data(loaded_data,data):
 func _check_correctness_data():
 	var j = 0
 	while(j < 9 &&  _get_score(j+1) != 0 ):
-		j = j + 1
-	if(j != _user_data["unlockedLevels"]):
+		j = j + 1 
+	if(j == 9 && j != _user_data["unlockedLevels"]):
+		return
+	if(j != _user_data["unlockedLevels"] - 1):
 		if(_user_data["unlockedLevels"] == 1 && j == 0):
 			return
 		elif(j!=9):
