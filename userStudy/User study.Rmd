@@ -24,11 +24,9 @@ themeGroupByUserMinTimestamp <- themeData %>%
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
 
-Wins <- database[database$won == 1]
-Losses <- database[database$won == 0]
 themegroupByUser <- themeData %>% 
                              group_by(user)
-
+themeNotLevel1LoggedFirst <- themeGroupByUserMinTimestamp[themeGroupByUserMinTimestamp$level != 1, ]
 ```
 Nb Of Users: `r nbUsers`
 
@@ -40,12 +38,12 @@ Nb Of Switched Users haha: `r themeNbUsers + noThemeNbUsers - nbUsers`
 
 Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
 
-Users lvl 1 not first logged: 
+Nb of users lvl 1 not first logged: `r nrow(themeNotLevel1LoggedFirst)`
+
+Users lvl 1 not first logged: `r themeNotLevel1LoggedFirst$user`
 
 Nb Of Entries: `r nrow(database)`
 
 Nb Of Theme Entries: `r nrow(themeData)`
 
 Nb Of No Theme Entries: `r nrow(noThemeData)`
-
-Win-loss ratio: `r nrow(Wins)/nrow(nbLosses)` 
