@@ -14,9 +14,21 @@ database <- read.csv("database.csv")
 #Verwijder de kolom "id".
 database$id = NULL
 
-withTheme <- database[database$theme == 1, ]
-withoutTheme <- database[database$theme == 0, ]
+themeData <- database[database$theme == 1, ]
+noThemeData <- database[database$theme == 0, ]
+nbUsers <- length(unique(database$user))
+nbThemeUsers <- length(unique(themeData$user))
+nbNoThemeUsers <- length(unique(noThemeData$user))
 ```
+NbOfUsers: `r nbUsers`
 
-In de database zijn er `r length(unique(withTheme$user))` gebruikers met thema. Zij genereerden `r nrow(withTheme)` entries. Er zijn `r length(unique(withoutTheme$user))` gebruikers zonder thema. Zij genereerden `r nrow(withoutTheme)` entries om tot een totaal het totaal aantal entries van `r nrow(database)` in de database te komen.
+NbOfThemeUsers: `r nbThemeUsers`
+
+NbOfNoThemeUsers: `r nbNoThemeUsers`
+
+NbOfEntries: `r nrow(database)`
+
+NbOfThemeEntries: `r nrow(themeData)`
+
+NbOfNoThemeEntries: `r nrow(noThemeData)`
 
