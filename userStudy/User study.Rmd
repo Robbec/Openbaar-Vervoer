@@ -18,4 +18,5 @@ withTheme <- database[database$theme == 1, ]
 withoutTheme <- database[database$theme == 0, ]
 ```
 
-De database heeft `r nrow(database)` entries. Er zijn `r nrow(withTheme)` entries voor gebruikers met thema en `r nrow(withoutTheme)` entries voor gebruikers zonder thema.
+In de database zijn er `r length(unique(withTheme$user))` gebruikers met thema. Zij genereerden `r nrow(withTheme)` entries. Er zijn `r length(unique(withoutTheme$user))` gebruikers zonder thema. Zij genereerden `r nrow(withoutTheme)` entries om tot een totaal het totaal aantal entries van `r nrow(database)` in de database te komen.
+
