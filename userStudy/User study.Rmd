@@ -26,6 +26,8 @@ NbOfThemeUsers: `r nbThemeUsers`
 
 NbOfNoThemeUsers: `r nbNoThemeUsers`
 
+NbOfSwitchedUsers? haha: `r nbThemeUsers + nbNoThemeUsers - nbUsers`
+
 NbOfEntries: `r nrow(database)`
 
 NbOfThemeEntries: `r nrow(themeData)`
