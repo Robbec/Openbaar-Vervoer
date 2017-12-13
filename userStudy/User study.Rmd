@@ -18,19 +18,21 @@ database$id = NULL
 themeData <- database[database$theme == 1, ]
 noThemeData <- database[database$theme == 0, ]
 nbUsers <- length(unique(database$user))
-nbThemeUsers <- length(unique(themeData$user))
-nbNoThemeUsers <- length(unique(noThemeData$user))
-groupByUserMinTimestamp <- themeData %>% 
+themeNbUsers <- length(unique(themeData$user))
+noThemeNbUsers <- length(unique(noThemeData$user))
+themeGroupByUserMinTimestamp <- themeData %>% 
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
+themegroupByUser <- themeData %>% 
+                             group_by(user)
 ```
 Nb Of Users: `r nbUsers`
 
-Nb Of Theme Users: `r nbThemeUsers`
+Nb Of Theme Users: `r themeNbUsers`
 
-Nb Of No Theme Users: `r nbNoThemeUsers`
+Nb Of No Theme Users: `r noThemeNbUsers`
 
-Nb Of Switched Users haha: `r nbThemeUsers + nbNoThemeUsers - nbUsers`
+Nb Of Switched Users haha: `r themeNbUsers + noThemeNbUsers - nbUsers`
 
 Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
 
