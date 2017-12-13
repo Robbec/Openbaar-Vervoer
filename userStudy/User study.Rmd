@@ -24,8 +24,9 @@ themeGroupByUserMinTimestamp <- themeData %>%
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
 
-Wins <- database[database$won == 1]
-Losses <- database[database$won == 0]
+Wins <- database[database$won == 1, ]
+Losses <- database[database$won == 0, ]
+
 themegroupByUser <- themeData %>% 
                              group_by(user)
 
