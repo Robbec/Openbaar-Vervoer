@@ -22,6 +22,8 @@ nbUsers <- length(unique(database$user))
 themeNbUsers <- length(unique(themeData$user))
 noThemeNbUsers <- length(unique(noThemeData$user))
 
+usersFinishedLevel9 <- length(unique(database[database$won == 1 & database$level == 9,]$user))
+
 controlThemegroupByUser <- themeData %>% 
                              group_by(user)
 themeGroupByUserMinTimestamp <- themeData %>% 
