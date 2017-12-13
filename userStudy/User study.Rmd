@@ -43,20 +43,35 @@ Wins <- database[database$won == 1, ]
 LossesLevel2 <- Losses[Losses$level == 2, ]
 WinsLevel2 <- Wins[Wins$level == 2, ]
 
+#de hoeveelheid keren dat je gemiddeld verloor voor je level 2 won
 FirstWinLevel2 <- aggregate(timeStamp ~ user, WinsLevel2, function(x) min( as.POSIXct(x)))
 joinWinAndLossTableLevel2 <- LossesLevel2 %>% inner_join(FirstWinLevel2, by='user')
 LossesBeforefirstWinLevel2 <- filter(joinWinAndLossTableLevel2,as.POSIXct(timeStamp.x) < as.POSIXct(timeStamp.y))
 nbLossesBeforefirstWinLevel2 <- count(LossesBeforefirstWinLevel2, user)
 meanLevel2<- summarise(nbLossesBeforefirstWinLevel2,n = mean(n))
+
+#de hoeveelheid keren dat je gemiddeld verloor voor je level 3 won
 LossesLevel3 <- Losses[Losses$level == 3, ]
 WinsLevel3 <- Wins[Wins$level == 3, ]
 FirstWinLevel3 <- aggregate(timeStamp ~ user, WinsLevel3, function(x) min( as.POSIXct(x)))
 joinWinAndLossTableLevel3 <- LossesLevel3 %>% inner_join(FirstWinLevel3, by='user')
 LossesBeforefirstWinLevel3 <- filter(joinWinAndLossTableLevel3,as.POSIXct(timeStamp.x) < as.POSIXct(timeStamp.y))
 nbLossesBeforefirstWinLevel3 <- count(LossesBeforefirstWinLevel3, user)
-
 meanLevel3<- summarise(nbLossesBeforefirstWinLevel3,n = mean(n))
 
+
+#win/loss ratio
+Level3 <- database[database$level == 3, ]
+FirstTryLevel3 <- aggregate(timeStamp ~ user, Level3, function(x) min( as.POSIXct(x)))
+FirstTryLevel3Complete <- FirstTryLevel3 %>% inner_join(Level3, by='user')
+FirstTryLevel3Correct <- filter(FirstTryLevel3Complete, as.POSIXct(timeStamp.x) == as.POSIXct(timeStamp.y))
+Level3FirstLoss <- FirstTryLevel3Correct[FirstTryLevel3Correct$won == 0, ]
+Level3FirstWin <- FirstTryLevel3Correct[FirstTryLevel3Correct$won == 1, ]
+
+
+nbOfFirstTryLevel3Loss <- length(unique(Level3FirstLoss$user))
+
+nbOfFirstTryLevel3Win <- length(unique(Level3FirstWin$user))
 ```
 Nb Of Users: `r nbUsers`
 
@@ -89,3 +104,4 @@ average loss before each Win in level 2: `r meanLevel2$n[[1]]`
 
 average loss before each Win in level 3: `r meanLevel3$n[[1]]`
 
+average first Try win/loss ratio in level 3: `r nbOfFirstTryLevel3Win/nbOfFirstTryLevel3Loss`
