@@ -23,7 +23,15 @@ noThemeNbUsers <- length(unique(noThemeData$user))
 themeGroupByUserMinTimestamp <- themeData %>% 
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
+Losses <- database[database$won == 0, ]
+Wins <- database[database$won == 1, ]
+LossesLevel2 <- Losses[Losses$level == 2, ]
+WinsLevel2 <- Wins[Wins$level == 2, ]
 
+FirstWinLevel2 <- aggregate(timeStamp ~ user, WinsLevel2, function(x) min( as.POSIXct(x)))
+joinWinAndLossTable <- LossesLevel2 %>% inner_join(FirstWinLevel2, by='user')
+LossesBeforefirstWin <- filter(joinWinAndLossTable,as.POSIXct(timeStamp.x) < as.POSIXct(timeStamp.y))
+nbLossesBeforefirstWin <- count(LossesBeforefirstWin, user)
 themegroupByUser <- themeData %>% 
                              group_by(user)
 
@@ -37,6 +45,9 @@ Nb Of No Theme Users: `r noThemeNbUsers`
 Nb Of Switched Users haha: `r themeNbUsers + noThemeNbUsers - nbUsers`
 
 Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
+```{r}
+
+```
 
 Users lvl 1 not first logged: 
 
@@ -45,3 +56,5 @@ Nb Of Entries: `r nrow(database)`
 Nb Of Theme Entries: `r nrow(themeData)`
 
 Nb Of No Theme Entries: `r nrow(noThemeData)`
+
+average loss before each Win in level 2: `r summarise(nbLossesBeforefirstWin,n = mean(n))`
