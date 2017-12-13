@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r}
+library(dplyr)
 database <- read.csv("database.csv")
 #Verwijder de kolom "id".
 database$id = NULL
@@ -19,6 +20,9 @@ noThemeData <- database[database$theme == 0, ]
 nbUsers <- length(unique(database$user))
 nbThemeUsers <- length(unique(themeData$user))
 nbNoThemeUsers <- length(unique(noThemeData$user))
+groupByUserMinTimestamp <- themeData %>% 
+                             group_by(user) %>% 
+                             slice(which.min(timeStamp))
 ```
 Nb Of Users: `r nbUsers`
 
@@ -29,6 +33,8 @@ Nb Of No Theme Users: `r nbNoThemeUsers`
 Nb Of Switched Users haha: `r nbThemeUsers + nbNoThemeUsers - nbUsers`
 
 Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
+
+Users lvl 1 not first logged: 
 
 Nb Of Entries: `r nrow(database)`
 
