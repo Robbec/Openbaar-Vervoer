@@ -20,17 +20,19 @@ nbUsers <- length(unique(database$user))
 nbThemeUsers <- length(unique(themeData$user))
 nbNoThemeUsers <- length(unique(noThemeData$user))
 ```
-NbOfUsers: `r nbUsers`
+Nb Of Users: `r nbUsers`
 
-NbOfThemeUsers: `r nbThemeUsers`
+Nb Of Theme Users: `r nbThemeUsers`
 
-NbOfNoThemeUsers: `r nbNoThemeUsers`
+Nb Of No Theme Users: `r nbNoThemeUsers`
 
-NbOfSwitchedUsers? haha: `r nbThemeUsers + nbNoThemeUsers - nbUsers`
+Nb Of Switched Users haha: `r nbThemeUsers + nbNoThemeUsers - nbUsers`
 
-NbOfEntries: `r nrow(database)`
+Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
 
-NbOfThemeEntries: `r nrow(themeData)`
+Nb Of Entries: `r nrow(database)`
 
-NbOfNoThemeEntries: `r nrow(noThemeData)`
+Nb Of Theme Entries: `r nrow(themeData)`
+
+Nb Of No Theme Entries: `r nrow(noThemeData)`
 
