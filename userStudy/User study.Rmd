@@ -1,0 +1,21 @@
+---
+title: "User study"
+author: "Jeroen O., Niels V.B., Robbe C. & Sebastiano V."
+date: "December 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+database <- read.csv("database.csv")
+#Verwijder de kolom "id".
+database$id = NULL
+
+withTheme <- database[database$theme == 1, ]
+withoutTheme <- database[database$theme == 0, ]
+```
+
+De database heeft `r nrow(database)` entries. Er zijn `r nrow(withTheme)` entries voor gebruikers met thema en `r nrow(withoutTheme)` entries voor gebruikers zonder thema.
