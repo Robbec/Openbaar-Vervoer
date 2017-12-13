@@ -24,9 +24,6 @@ themeGroupByUserMinTimestamp <- themeData %>%
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
 
-Wins <- database[database$won == 1, ]
-Losses <- database[database$won == 0, ]
-
 themegroupByUser <- themeData %>% 
                              group_by(user)
 
@@ -48,5 +45,3 @@ Nb Of Entries: `r nrow(database)`
 Nb Of Theme Entries: `r nrow(themeData)`
 
 Nb Of No Theme Entries: `r nrow(noThemeData)`
-
-Win-loss ratio: `r nrow(Wins)/nrow(nbLosses)` 
