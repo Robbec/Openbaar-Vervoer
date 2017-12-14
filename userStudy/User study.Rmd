@@ -96,6 +96,7 @@ Level3FirstWin <- FirstTryLevel3Correct[FirstTryLevel3Correct$won == 1, ]
 nbOfFirstTryLevel3Loss <- length(unique(Level3FirstLoss$user))
 
 nbOfFirstTryLevel3Win <- length(unique(Level3FirstWin$user))
+
 ```
 Nb Of Users: `r nbUsers`
 
@@ -129,3 +130,5 @@ average loss before each Win in level 2: `r meanLevel2$n[[1]]`
 average loss before each Win in level 3: `r meanLevel3$n[[1]]`
 
 average first Try win/loss ratio in level 3: `r nbOfFirstTryLevel3Win/nbOfFirstTryLevel3Loss`
+
+Nb of users that finished the game: `r usersFinishedLevel9`
