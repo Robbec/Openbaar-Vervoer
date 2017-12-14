@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r}
 library(dplyr)
+library(ez)
 database <- read.csv("database.csv")
 #Verwijder de kolom "id".
 database$id = NULL
@@ -52,6 +53,9 @@ nbUsersPerDay <- data.frame(table(userDays$days))
 groupByUserMinTimestamp <- database %>% 
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
+
+model <- ezANOVA(data = groupByUserMinTimestamp, dv = .(startTime), wid = .(user), within = .(theme), detailed = TRUE)
+print(model)
 
 newDays <- format(as.Date(groupByUserMinTimestamp$timeStamp,format="%Y-%m-%d"), "%Y-%m-%d")
 
