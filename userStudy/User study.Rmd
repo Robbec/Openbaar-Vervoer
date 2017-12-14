@@ -39,6 +39,28 @@ noThemeGroupByUserMinTimestamp <- noThemeData %>%
 themeNotLevel1LoggedFirst <- themeGroupByUserMinTimestamp[themeGroupByUserMinTimestamp$level != 1, ]
 noThemeNotLevel1LoggedFirst <- noThemeGroupByUserMinTimestamp[noThemeGroupByUserMinTimestamp$level != 1, ]
 
+userTimestamps <- subset(database, select = c(user, timeStamp))
+
+days <- format(as.Date(userTimestamps$timeStamp,format="%Y-%m-%d"), "%Y-%m-%d")
+
+controlUserDaysTimestamps <- cbind(userTimestamps, days)
+
+userDays <- unique(subset(controlUserDaysTimestamps, select = c(user, days)))
+
+nbUsersPerDay <- data.frame(table(userDays$days))
+
+groupByUserMinTimestamp <- database %>% 
+                             group_by(user) %>% 
+                             slice(which.min(timeStamp))
+
+newDays <- format(as.Date(groupByUserMinTimestamp$timeStamp,format="%Y-%m-%d"), "%Y-%m-%d")
+
+controlNewUserDaysTimestamps <- cbind(groupByUserMinTimestamp, day = format(as.Date(groupByUserMinTimestamp$timeStamp,format="%Y-%m-%d"), "%Y-%m-%d"))
+
+newUserDays <- unique(subset(controlNewUserDaysTimestamps, select = c(user, day)))
+
+nbNewUsersPerDay <- data.frame(table(newUserDays$day))
+
 
 Losses <- database[database$won == 0, ]
 Wins <- database[database$won == 1, ]
