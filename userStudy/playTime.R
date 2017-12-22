@@ -16,5 +16,3 @@ lbls <- paste(lbls, " minutes )")
 pie(bothSumTime, 
     main="Total time played",
     labels = lbls)
-
-
