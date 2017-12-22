@@ -20,7 +20,7 @@ matrixUsers <- do.call(rbind, bothUsers)
 
 # grouped barplot replayers
 barplot(matrixUsers, 
-        main="Level completed",
+        main="Successfully completed levels",
         beside = TRUE,
         names.arg= noThemeNbOfUsersCompletedLevel$Var1,
         xlab="Level",
