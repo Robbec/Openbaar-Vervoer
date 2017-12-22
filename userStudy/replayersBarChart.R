@@ -43,4 +43,6 @@ barplot(matrixNewUsers,
         xlab="Day of December 2017",
         ylim=c(0, 20),
         ylab="Number of users",
-        las=2)
+        las=2,
+        legend.text = c("Themed", "Unthemed"),
+        args.legend = list(x = "topright", bty="n"))
