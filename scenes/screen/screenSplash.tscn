@@ -57,6 +57,7 @@ speed = 400
 
 [node name="bus" type="Area2D" parent="busPath/busPathFollow"]
 
+transform/pos = Vector2( 531.665, 0 )
 input/pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

@@ -1,7 +1,7 @@
 ---
 title: "User study"
 author: "Jeroen O., Niels V.B., Robbe C. & Sebastiano V."
-date: "December 2017"
+date: "December 2016"
 output: html_document
 ---
 
@@ -101,6 +101,16 @@ nbOfFirstTryLevel3Loss <- length(unique(Level3FirstLoss$user))
 
 nbOfFirstTryLevel3Win <- length(unique(Level3FirstWin$user))
 
+#startimes in theme and nontheme for level 3
+Level9Values <- database[database$level == 9, ]
+FirstTryLevel9 <- aggregate(timeStamp ~ user, Level9Values, function(x) min( as.POSIXct(x)))
+FirstTryLevel9Complete <- FirstTryLevel9 %>% inner_join(Level9Values, by='user')
+FirstTryLevel9Correct <- filter(FirstTryLevel9Complete, as.POSIXct(timeStamp.x) == as.POSIXct(timeStamp.y))
+Level9ValuesTheme <- FirstTryLevel9Correct[FirstTryLevel9Correct$theme == 1, ]
+Level9ValuesNoTheme <- FirstTryLevel9Correct[FirstTryLevel9Correct$theme == 0, ]
+Level9StartTimeTheme <- Level9ValuesTheme %>% select(startTime)
+Level9StartTimeNoTheme <- Level9ValuesNoTheme %>% select(startTime)
+reslevel2 <- t.test(Level2StartTimeNoTheme, Level2StartTimeTheme,alternative = "less", var.equal = FALSE)
 ```
 Nb Of Users: `r nbUsers`
 
