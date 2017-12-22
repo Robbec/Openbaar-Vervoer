@@ -1,7 +1,7 @@
 database <- read.csv("database.csv")
 
 # alle datums tussen 06-12 en 22-12 als characters omdat merge anders niet werkt met vreemde dateformats
-dates <- data.frame(Var1 =  as.character(strptime(seq(as.Date("2017-12-06"), as.Date("2017-12-22"), "days"), "%Y-%m-%d")))
+dates <- data.frame(Var1 =  as.character(strptime(seq(as.Date("2017-12-06"), as.Date("2017-12-20"), "days"), "%Y-%m-%d")))
 
 # filter eerste spelletje per user
 groupByUserMinTimestamp <- database %>% 
@@ -37,7 +37,7 @@ matrixNewUsers <- do.call(rbind, bothNewUsers)
 
 # grouped barplot new users
 barplot(matrixNewUsers, 
-        main="New users",
+        main="New users per day",
         beside = TRUE,
         names.arg= format(as.Date(themeJoinNewNbOfUsersPerDayWithDates$Var1), "%d"),
         xlab="Day of December 2017",
@@ -76,7 +76,7 @@ matrixUsers <- do.call(rbind, bothUsers)
 
 # grouped barplot replayers
 barplot(matrixUsers, 
-        main="Replayers",
+        main="Replayers per day",
         beside = TRUE,
         names.arg= format(as.Date(themeJoinNewNbOfUsersPerDayWithDates$Var1), "%d"),
         xlab="Day of December 2017",
