@@ -54,8 +54,8 @@ groupByUserMinTimestamp <- database %>%
                              group_by(user) %>% 
                              slice(which.min(timeStamp))
 
-model <- ezANOVA(data = groupByUserMinTimestamp, dv = .(startTime), wid = .(user), within = .(theme), detailed = TRUE)
-print(model)
+# model <- ezANOVA(data = groupByUserMinTimestamp, dv = .(startTime), wid = .(user), within = .(theme), detailed = TRUE)
+# print(model)
 
 newDays <- format(as.Date(groupByUserMinTimestamp$timeStamp,format="%Y-%m-%d"), "%Y-%m-%d")
 
@@ -121,9 +121,6 @@ Nb Of No Theme Users: `r noThemeNbUsers`
 Nb Of Switched Users haha: `r themeNbUsers + noThemeNbUsers - nbUsers`
 
 Switched Users: `r unique(themeData$user[themeData$user %in% noThemeData$user])`
-```{r}
-
-```
 
 Nb of users lvl 1 not first logged: `r nrow(themeNotLevel1LoggedFirst)`
 
