@@ -74,7 +74,7 @@ noThemeJoinNbOfUsersPerDayWithDates$Freq[is.na(noThemeJoinNbOfUsersPerDayWithDat
 bothUsers <- data.frame(cbind(themeJoinNbOfUsersPerDayWithDates$Freq - themeJoinNewNbOfUsersPerDayWithDates$Freq, noThemeJoinNbOfUsersPerDayWithDates$Freq - noThemeJoinNewNbOfUsersPerDayWithDates$Freq))
 matrixUsers <- do.call(rbind, bothUsers)
 
-# grouped barplot new users
+# grouped barplot replayers
 barplot(matrixUsers, 
         main="Replayers",
         beside = TRUE,
