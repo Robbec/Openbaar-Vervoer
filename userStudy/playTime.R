@@ -16,3 +16,6 @@ lbls <- paste(lbls, " minutes )")
 pie(bothSumTime, 
     main="Total time played",
     labels = lbls)
+
+t.test(themeSumTimePerLog$sumTime,noThemeSumTimePerLog$sumTime,
+       alternative = "greater")
