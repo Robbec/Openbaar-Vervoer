@@ -1,3 +1,4 @@
+library(dplyr)
 database <- read.csv("database.csv")
 
 # alle datums tussen 06-12 en 22-12 als characters omdat merge anders niet werkt met vreemde dateformats
